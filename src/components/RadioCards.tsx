@@ -4,7 +4,12 @@ import { ComponentProps, FC } from "react";
 export const RadioCards: FC<ComponentProps<typeof RadioGroupPrimitive.Root>> = (
   props
 ) => {
-  return <RadioGroupPrimitive.Root {...props} className="flex gap-4" />;
+  return (
+    <RadioGroupPrimitive.Root
+      {...props}
+      className="flex flex-col md:flex-row gap-4"
+    />
+  );
 };
 
 export const RadioCardItem: FC<
@@ -13,7 +18,7 @@ export const RadioCardItem: FC<
   return (
     <RadioGroupPrimitive.Item
       {...props}
-      className="group inline-flex items-center select-none gap-3 p-4 rounded-md outline-none bg-white aria-checked:bg-black aria-checked:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900"
+      className="group inline-flex items-center justify-between select-none gap-3 p-4 rounded-md outline-none bg-white aria-checked:bg-black aria-checked:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900"
     >
       {children}
       <div className="inline-flex items-center justify-center text-gray-900 shrink-0 size-5 rounded-full border border-black group-aria-checked:border-none overflow-clip">

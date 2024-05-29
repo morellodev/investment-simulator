@@ -13,7 +13,7 @@ export const InvestmentInputs: FC = () => {
   } = useInvestmentStore();
 
   return (
-    <div className="grid grid-cols-3 gap-8">
+    <div className="grid gap-4 md:grid-cols-3 lg:gap-8">
       <Field>
         <Label>Initial Investment</Label>
         <Input
