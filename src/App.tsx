@@ -4,6 +4,8 @@ import { Field, Label } from "./components/Field";
 import { InvestmentInputs } from "./components/InvestmentInputs";
 import { InvestmentOutlook } from "./components/InvestmentOutlook";
 import { PortfolioSelect } from "./components/PortfolioSelect";
+import { ReturnRate } from "./components/ReturnRate";
+import { ProjectionDetails } from "./components/ProjectionDetails";
 
 export const App: FC = () => {
   return (
@@ -15,7 +17,7 @@ export const App: FC = () => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 mt-8 md:mt-10 lg:mt-20 lg:auto-rows-fr">
+        <div className="grid grid-cols-2 gap-2 mt-8 md:mt-10 lg:mt-20">
           <section className="col-span-full">
             <Card>
               <InvestmentInputs />
@@ -28,12 +30,16 @@ export const App: FC = () => {
                 <Label>Select Portfolio</Label>
                 <PortfolioSelect />
               </Field>
+              <div className="my-4" />
+              <ReturnRate />
             </Card>
           </section>
 
           <section className="col-span-full lg:col-span-1">
             <Card>
               <InvestmentOutlook />
+              <hr className="my-6 border-t-zinc-200" />
+              <ProjectionDetails />
             </Card>
           </section>
         </div>
