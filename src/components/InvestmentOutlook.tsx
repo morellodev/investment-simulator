@@ -11,13 +11,13 @@ export const InvestmentOutlook: FC = () => {
 
   return (
     <dl className="flex flex-col">
-      <div className="flex justify-between text-xl px-4 pb-3">
+      <div className="flex justify-between px-4 pb-3 text-xl">
         <dt>Total Invested</dt>
         <dd className="font-semibold">
           <Currency value={totalInvested} />
         </dd>
       </div>
-      <div className="flex justify-between text-xl px-4 py-3 bg-black rounded text-white">
+      <div className="flex justify-between px-4 py-3 text-xl text-white bg-black rounded">
         <dt>Projected Value</dt>
         <dd className="font-semibold">
           <Currency value={futureInvestmentValue} />

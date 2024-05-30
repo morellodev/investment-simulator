@@ -9,10 +9,10 @@ import { ProjectionDetails } from "./components/ProjectionDetails";
 
 export const App: FC = () => {
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="bg-white p-6 md:p-10 lg:p-20">
+    <div className="mx-auto max-w-7xl">
+      <div className="p-6 bg-white md:p-10 lg:p-20">
         <div className="lg:w-1/2">
-          <h1 className="text-balance text-3xl md:text-4xl lg:text-5xl font-semibold">
+          <h1 className="text-3xl font-semibold text-balance md:text-4xl lg:text-5xl">
             Returns, performance and fees
           </h1>
         </div>

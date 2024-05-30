@@ -18,7 +18,7 @@ export const ProjectionDetails: FC = () => {
   });
 
   return (
-    <dl className="flex flex-col  gap-2">
+    <dl className="flex flex-col gap-2">
       <div className="flex justify-between px-4">
         <dt>Investment Return</dt>
         <dd className="font-semibold tabular-nums">
