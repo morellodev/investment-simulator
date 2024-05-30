@@ -31,7 +31,7 @@ export const ProjectionDetails: FC = () => {
       </div>
       <div className="flex justify-between px-4">
         <dt>Total Earned</dt>
-        <dd className="font-semibold tabular-nums">
+        <dd className="font-semibold">
           <Currency value={yieldValue} />
         </dd>
       </div>

@@ -10,6 +10,8 @@ export const ReturnRate: FC = () => {
   });
 
   return (
-    <span className="text-sm tabular-nums text-zinc-600">{`${percent} estimated return`}</span>
+    <span className="text-sm text-zinc-600">
+      <span className="tabular-nums">{percent}</span> estimated return
+    </span>
   );
 };

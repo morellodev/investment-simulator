@@ -1,16 +1,17 @@
 import { FC } from "react";
 import { useInvestmentStore } from "../store/investmentStore";
 import { Field, Input, Label } from "./Field";
+import { pick } from "../utils/object";
 
 export const InvestmentInputs: FC = () => {
-  const {
-    initialInvestment,
-    monthlyContribution,
-    years,
-    setInitialInvestment,
-    setMonthlyContribution,
-    setYears,
-  } = useInvestmentStore();
+  const { initialInvestment, monthlyContribution, years } = useInvestmentStore(
+    pick(["initialInvestment", "monthlyContribution", "years"])
+  );
+
+  const { setInitialInvestment, setMonthlyContribution, setYears } =
+    useInvestmentStore(
+      pick(["setInitialInvestment", "setMonthlyContribution", "setYears"])
+    );
 
   return (
     <div className="grid gap-4 md:grid-cols-3 lg:gap-8">

@@ -1,6 +1,7 @@
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { FC } from "react";
 import { useInvestmentStore } from "../store/investmentStore";
+import { pick } from "../utils/object";
 
 const portfolios = [
   ["Conservative", 0.05],
@@ -9,7 +10,9 @@ const portfolios = [
 ] as const;
 
 export const PortfolioSelect: FC = () => {
-  const { interestRate, setInterestRate } = useInvestmentStore();
+  const { interestRate, setInterestRate } = useInvestmentStore(
+    pick(["interestRate", "setInterestRate"])
+  );
 
   return (
     <RadioGroupPrimitive.Root
@@ -21,7 +24,7 @@ export const PortfolioSelect: FC = () => {
         <RadioGroupPrimitive.Item
           key={index}
           value={String(rate)}
-          className="group inline-flex items-center justify-between select-none gap-4 px-4 py-3 rounded-md outline-none bg-white aria-checked:bg-black aria-checked:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900"
+          className="group inline-flex items-center justify-between select-none gap-4 px-4 py-3 rounded-md outline-none bg-white aria-checked:bg-black aria-checked:text-white focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
         >
           <span>{label}</span>
           <div className="inline-flex items-center justify-center text-gray-900 shrink-0 size-5 rounded-full border border-black group-aria-checked:border-none overflow-clip">
