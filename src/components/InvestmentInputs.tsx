@@ -1,61 +1,87 @@
 import { FC } from "react";
 import { useInvestmentStore } from "../store/investmentStore";
 import { Field, Input, Label } from "./Field";
-import { pick } from "../utils/object";
 
-export const InvestmentInputs: FC = () => {
-  const { initialInvestment, monthlyContribution, years } = useInvestmentStore(
-    pick(["initialInvestment", "monthlyContribution", "years"])
+const InitialInvestmentField: FC = () => {
+  const initialInvestment = useInvestmentStore(
+    (state) => state.initialInvestment
   );
 
-  const { setInitialInvestment, setMonthlyContribution, setYears } =
-    useInvestmentStore(
-      pick(["setInitialInvestment", "setMonthlyContribution", "setYears"])
-    );
+  const setInitialInvestment = useInvestmentStore(
+    (state) => state.setInitialInvestment
+  );
 
   return (
+    <Field>
+      <Label>Initial Investment</Label>
+      <Input
+        type="text"
+        inputMode="decimal"
+        value={initialInvestment}
+        onChange={(e) => {
+          const n = Number(e.target.value);
+          if (Number.isNaN(n)) return;
+          setInitialInvestment(n);
+        }}
+      />
+    </Field>
+  );
+};
+
+const MonthlyContributionField: FC = () => {
+  const monthlyContribution = useInvestmentStore(
+    (state) => state.monthlyContribution
+  );
+
+  const setMonthlyContribution = useInvestmentStore(
+    (state) => state.setMonthlyContribution
+  );
+
+  return (
+    <Field>
+      <Label>Monthly Contribution</Label>
+      <Input
+        type="text"
+        inputMode="decimal"
+        value={monthlyContribution}
+        onChange={(e) => {
+          const n = Number(e.target.value);
+          if (Number.isNaN(n)) return;
+          setMonthlyContribution(n);
+        }}
+      />
+    </Field>
+  );
+};
+
+const TimeHorizonField: FC = () => {
+  const years = useInvestmentStore((state) => state.years);
+
+  const setYears = useInvestmentStore((state) => state.setYears);
+
+  return (
+    <Field>
+      <Label>Investment Term</Label>
+      <Input
+        type="text"
+        inputMode="decimal"
+        value={years}
+        onChange={(e) => {
+          const n = Number(e.target.value);
+          if (Number.isNaN(n)) return;
+          setYears(n);
+        }}
+      />
+    </Field>
+  );
+};
+
+export const InvestmentInputs: FC = () => {
+  return (
     <div className="grid gap-4 md:grid-cols-3 lg:gap-8">
-      <Field>
-        <Label>Initial Investment</Label>
-        <Input
-          type="text"
-          inputMode="decimal"
-          value={initialInvestment}
-          onChange={(e) => {
-            const n = Number(e.target.value);
-            if (Number.isNaN(n)) return;
-            setInitialInvestment(n);
-          }}
-        />
-      </Field>
-
-      <Field>
-        <Label>Monthly Contribution</Label>
-        <Input
-          type="text"
-          inputMode="decimal"
-          value={monthlyContribution}
-          onChange={(e) => {
-            const n = Number(e.target.value);
-            if (Number.isNaN(n)) return;
-            setMonthlyContribution(n);
-          }}
-        />
-      </Field>
-
-      <Field>
-        <Label>Investment Term</Label>
-        <Input
-          type="text"
-          inputMode="decimal"
-          value={years}
-          onChange={(e) => {
-            const n = Number(e.target.value);
-            if (Number.isNaN(n)) return;
-            setYears(n);
-          }}
-        />
-      </Field>
+      <InitialInvestmentField />
+      <MonthlyContributionField />
+      <TimeHorizonField />
     </div>
   );
 };

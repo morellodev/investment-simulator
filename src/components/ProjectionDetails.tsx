@@ -4,6 +4,7 @@ import {
   useTotalInvested,
 } from "../store/investmentStore";
 import { Currency } from "./Currency";
+import { Percent } from "./Percent";
 
 export const ProjectionDetails: FC = () => {
   const totalInvested = useTotalInvested();
@@ -11,19 +12,14 @@ export const ProjectionDetails: FC = () => {
 
   const yieldValue = futureInvestmentValue - totalInvested;
   const yieldRatio = yieldValue / totalInvested;
-  const yieldPercent = yieldRatio.toLocaleString("en-US", {
-    style: "percent",
-    maximumFractionDigits: 2,
-    signDisplay: "exceptZero",
-  });
 
   return (
     <dl className="flex flex-col gap-2">
       <div className="flex justify-between px-4">
         <dt>Investment Return</dt>
-        <dd className="font-semibold tabular-nums">
+        <dd className="font-semibold">
           <span className={yieldRatio >= 0 ? "text-green-600" : "text-red-600"}>
-            {yieldPercent}
+            <Percent value={yieldRatio} />
           </span>
         </dd>
       </div>

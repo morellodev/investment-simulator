@@ -1,7 +1,6 @@
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { FC } from "react";
 import { useInvestmentStore } from "../store/investmentStore";
-import { pick } from "../utils/object";
 import { CheckIcon } from "@radix-ui/react-icons";
 
 const portfolios = [
@@ -11,9 +10,9 @@ const portfolios = [
 ] as const;
 
 export const PortfolioSelect: FC = () => {
-  const { interestRate, setInterestRate } = useInvestmentStore(
-    pick(["interestRate", "setInterestRate"])
-  );
+  const interestRate = useInvestmentStore((state) => state.interestRate);
+
+  const setInterestRate = useInvestmentStore((state) => state.setInterestRate);
 
   return (
     <RadioGroupPrimitive.Root
