@@ -18,8 +18,8 @@ export const ProjectionDetails: FC = () => {
   });
 
   return (
-    <dl className="flex flex-col px-4 pb-3 gap-2">
-      <div className="flex justify-between">
+    <dl className="flex flex-col  gap-2">
+      <div className="flex justify-between px-4">
         <dt>Investment Return</dt>
         <dd className="font-semibold tabular-nums">
           {yieldRatio > 0 ? (
@@ -29,7 +29,7 @@ export const ProjectionDetails: FC = () => {
           )}
         </dd>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between px-4">
         <dt>Total Earned</dt>
         <dd className="font-semibold tabular-nums">
           <Currency value={yieldValue} />
