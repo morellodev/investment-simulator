@@ -1,11 +1,19 @@
 import { FC } from "react";
+import { FormattedNumber } from "./FormattedNumber";
 
-export const Percent: FC<{ value: number }> = ({ value }) => {
-  const formatted = value.toLocaleString("en-US", {
-    style: "percent",
-    maximumFractionDigits: 1,
-    signDisplay: "exceptZero",
-  });
+type Props = { value: number } & Omit<Intl.NumberFormatOptions, "style">;
 
-  return <span className="tabular-nums">{formatted}</span>;
+export const Percent: FC<Props> = ({
+  value,
+  maximumFractionDigits = 1,
+  ...rest
+}) => {
+  return (
+    <FormattedNumber
+      style="percent"
+      value={value}
+      maximumFractionDigits={maximumFractionDigits}
+      {...rest}
+    />
+  );
 };

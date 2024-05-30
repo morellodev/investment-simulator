@@ -1,11 +1,21 @@
 import { FC } from "react";
+import { FormattedNumber } from "./FormattedNumber";
 
-export const Currency: FC<{ value: number }> = ({ value }) => {
-  const formatted = value.toLocaleString("en-US", {
-    style: "currency",
-    currency: "EUR",
-    maximumFractionDigits: 0,
-  });
+type Props = { value: number } & Omit<Intl.NumberFormatOptions, "style">;
 
-  return <span className="tabular-nums">{formatted}</span>;
+export const Currency: FC<Props> = ({
+  value,
+  currency = "EUR",
+  maximumFractionDigits = 0,
+  ...rest
+}) => {
+  return (
+    <FormattedNumber
+      value={value}
+      style="currency"
+      currency={currency}
+      maximumFractionDigits={maximumFractionDigits}
+      {...rest}
+    />
+  );
 };

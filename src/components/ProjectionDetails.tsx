@@ -19,7 +19,7 @@ export const ProjectionDetails: FC = () => {
         <dt>Investment Return</dt>
         <dd className="font-semibold">
           <span className={yieldRatio >= 0 ? "text-green-600" : "text-red-600"}>
-            <Percent value={yieldRatio} />
+            <Percent value={yieldRatio} signDisplay="exceptZero" />
           </span>
         </dd>
       </div>
