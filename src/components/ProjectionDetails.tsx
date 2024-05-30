@@ -22,11 +22,9 @@ export const ProjectionDetails: FC = () => {
       <div className="flex justify-between px-4">
         <dt>Investment Return</dt>
         <dd className="font-semibold tabular-nums">
-          {yieldRatio > 0 ? (
-            <span className="text-green-600">{yieldPercent}</span>
-          ) : (
-            <span className="text-red-600">{yieldPercent}</span>
-          )}
+          <span className={yieldRatio >= 0 ? "text-green-600" : "text-red-600"}>
+            {yieldPercent}
+          </span>
         </dd>
       </div>
       <div className="flex justify-between px-4">
