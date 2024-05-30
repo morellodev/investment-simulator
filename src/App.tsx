@@ -13,7 +13,7 @@ export const App: FC = () => {
       <div className="p-6 bg-white md:p-10 lg:p-20">
         <div className="lg:w-1/2">
           <h1 className="text-3xl font-semibold text-balance md:text-4xl lg:text-5xl">
-            Returns, performance and fees
+            Simulate your investment return
           </h1>
         </div>
 

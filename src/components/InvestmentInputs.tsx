@@ -13,7 +13,7 @@ const InitialInvestmentField: FC = () => {
 
   return (
     <Field>
-      <Label>Initial Investment</Label>
+      <Label>Initial Investment (&euro;)</Label>
       <Input
         type="text"
         inputMode="decimal"
@@ -39,7 +39,7 @@ const MonthlyContributionField: FC = () => {
 
   return (
     <Field>
-      <Label>Monthly Contribution</Label>
+      <Label>Monthly Contribution (&euro;)</Label>
       <Input
         type="text"
         inputMode="decimal"
@@ -61,7 +61,7 @@ const TimeHorizonField: FC = () => {
 
   return (
     <Field>
-      <Label>Investment Term</Label>
+      <Label>Time Horizon (years)</Label>
       <Input
         type="text"
         inputMode="decimal"
