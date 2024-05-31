@@ -4,8 +4,8 @@ import { Field, Label } from "./components/Field";
 import { InvestmentInputs } from "./components/InvestmentInputs";
 import { InvestmentOutlook } from "./components/InvestmentOutlook";
 import { PortfolioSelect } from "./components/PortfolioSelect";
-import { ReturnRate } from "./components/ReturnRate";
 import { ProjectionDetails } from "./components/ProjectionDetails";
+import { ReturnRate } from "./components/ReturnRate";
 
 export const App: FC = () => {
   return (

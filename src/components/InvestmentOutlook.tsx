@@ -9,7 +9,7 @@ const TotalInvested: FC = () => {
   const totalInvested = useTotalInvested();
 
   return (
-    <div className="flex justify-between px-4 pb-3 text-xl">
+    <div className="flex justify-between px-4 py-3 text-xl">
       <dt>Total Invested</dt>
       <dd className="font-semibold">
         <Currency value={totalInvested} />

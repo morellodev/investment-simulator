@@ -1,8 +1,11 @@
 import { FC } from "react";
 import { useInvestmentStore } from "../store/investmentStore";
+import { CurrencySymbol } from "./CurrencySymbol";
 import { Field, Input, Label } from "./Field";
 
 const InitialInvestmentField: FC = () => {
+  const currency = useInvestmentStore((state) => state.currency);
+
   const initialInvestment = useInvestmentStore(
     (state) => state.initialInvestment
   );
@@ -13,7 +16,9 @@ const InitialInvestmentField: FC = () => {
 
   return (
     <Field>
-      <Label>Initial Investment (&euro;)</Label>
+      <Label>
+        Initial Investment (<CurrencySymbol currency={currency} />)
+      </Label>
       <Input
         type="text"
         inputMode="decimal"
@@ -29,6 +34,8 @@ const InitialInvestmentField: FC = () => {
 };
 
 const MonthlyContributionField: FC = () => {
+  const currency = useInvestmentStore((state) => state.currency);
+
   const monthlyContribution = useInvestmentStore(
     (state) => state.monthlyContribution
   );
@@ -39,7 +46,9 @@ const MonthlyContributionField: FC = () => {
 
   return (
     <Field>
-      <Label>Monthly Contribution (&euro;)</Label>
+      <Label>
+        Monthly Contribution (<CurrencySymbol currency={currency} />)
+      </Label>
       <Input
         type="text"
         inputMode="decimal"
