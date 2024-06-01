@@ -10,6 +10,9 @@ module.exports = {
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
   plugins: ["react-compiler", "react-refresh"],
+  settings: {
+    react: { version: "detect" },
+  },
   rules: {
     "react/react-in-jsx-scope": "off",
     "react-compiler/react-compiler": "error",
