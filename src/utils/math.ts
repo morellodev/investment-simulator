@@ -1,3 +1,5 @@
+export const PHI_INVERSE = 0.618033988749;
+
 export function calculateTotalInvested(args: {
   initialInvestment: number;
   monthlyContribution: number;

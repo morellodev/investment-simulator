@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useDimensions } from "../hooks/useDimensions";
+import { PHI_INVERSE } from "../utils/math";
 
 type Props = {
   series: number[];
@@ -15,8 +16,8 @@ export const BarChart: FC<Props> = ({ series }) => {
   // If each bar has same width and same spacing, then
   // the width of each bar is W / (N + N - 1) = W / (2N - 1)
 
-  // If the ratio of bar width to spacing is R = 1 / φ (Golden ratio)
-  const barWidthToSpacingRatio = 0.6180339887;
+  // If the ratio of bar width to spacing is R = φ (Golden ratio)
+  const barWidthToSpacingRatio = PHI_INVERSE;
 
   // The width of each bar is W / (N + R * (N - 1))
   const barWidth =
@@ -28,8 +29,9 @@ export const BarChart: FC<Props> = ({ series }) => {
   const highestValue = Math.max(...series);
 
   const coords: Array<[x: number, y: number]> = series.map((value, i) => [
-    // The x-coordinate of the i-th bar is i * (W / (N + R * (N - 1)) + R * W / (N + R * (N - 1)))
+    // The x-coordinate of the i-th bar is i * (barWidth + barSpacing)
     i * (barWidth + barSpacing),
+    // Scale the y-coordinate of the i-th bar to the chart height
     (chartHeight * value) / highestValue,
   ]);
 
