@@ -1,11 +1,13 @@
 import { FC } from "react";
-import { match } from "ts-pattern";
 import { Currency } from "../data/currencies";
 
 export const CurrencySymbol: FC<{ currency: Currency }> = ({ currency }) => {
-  return match(currency)
-    .with("USD", () => <>&#x24;</>)
-    .with("EUR", () => <>&#x20ac;</>)
-    .with("GBP", () => <>&#xa3;</>)
-    .exhaustive();
+  const currencyPart = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency,
+  })
+    .formatToParts()
+    .find((part) => part.type === "currency");
+
+  return currencyPart ? currencyPart.value : null;
 };
