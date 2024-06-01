@@ -4,6 +4,7 @@ import { Field, Label } from "./components/Field";
 import { InvestmentInputs } from "./components/InvestmentInputs";
 import { InvestmentOutlook } from "./components/InvestmentOutlook";
 import { PortfolioSelect } from "./components/PortfolioSelect";
+import { ProjectionChart } from "./components/ProjectionChart";
 import { ProjectionDetails } from "./components/ProjectionDetails";
 import { ReturnRate } from "./components/ReturnRate";
 
@@ -40,6 +41,12 @@ export const App: FC = () => {
               <InvestmentOutlook />
               <hr className="my-6 border-t-zinc-200" />
               <ProjectionDetails />
+            </Card>
+          </section>
+
+          <section className="col-span-full">
+            <Card>
+              <ProjectionChart />
             </Card>
           </section>
         </div>
