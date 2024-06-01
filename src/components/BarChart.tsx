@@ -36,7 +36,11 @@ export const BarChart: FC<Props> = ({ series }) => {
   ]);
 
   return (
-    <svg ref={chartRef} className="fill-current size-full">
+    <svg
+      ref={chartRef}
+      viewBox={`0 0 ${chartWidth} ${chartHeight}`}
+      className="fill-current size-full"
+    >
       {coords.map(([x, y], i) => (
         <rect key={i} width={barWidth} height={y} x={x} y={chartHeight - y} />
       ))}
