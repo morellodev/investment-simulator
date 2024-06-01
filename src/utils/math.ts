@@ -1,4 +1,4 @@
-export const PHI_INVERSE = 0.618033988749;
+export const PHI = 1.618_033_988_749;
 
 export function calculateTotalInvested(args: {
   initialInvestment: number;
