@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useDimensions } from "../hooks/useDimensions";
+import { useMeasure } from "../hooks/useMeasure";
 import { PHI_INVERSE } from "../utils/math";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const BarChart: FC<Props> = ({ series }) => {
-  const [chartRef, [chartWidth, chartHeight]] = useDimensions<SVGSVGElement>();
+  const [chartRef, [chartWidth, chartHeight]] = useMeasure<SVGSVGElement>();
 
   // Chart width = W
   // Number of bars = N

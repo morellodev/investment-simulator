@@ -1,6 +1,6 @@
 import { RefObject, useLayoutEffect, useRef, useState } from "react";
 
-export function useDimensions<T extends Element>(): [
+export function useMeasure<T extends Element>(): [
   RefObject<T | null>,
   [width: number, height: number]
 ] {
