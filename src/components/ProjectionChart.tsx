@@ -24,7 +24,13 @@ export const ProjectionChart: FC = () => {
 
   return (
     <div className="h-48 md:h-64 lg:h-80">
-      <BarChart series={series} />
+      {series.length === 0 ? (
+        <div className="flex items-center justify-center h-full text-zinc-600">
+          Empty chart
+        </div>
+      ) : (
+        <BarChart series={series} />
+      )}
     </div>
   );
 };
