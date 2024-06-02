@@ -6,12 +6,22 @@ import { Percent } from "./Percent";
 const InvestmentReturn: FC = () => {
   const yieldRatio = useYieldRatio();
 
+  const normalizedYieldRatio = Number.isNaN(yieldRatio) ? 0 : yieldRatio;
+
   return (
     <div className="flex justify-between px-4">
       <dt>Investment Return</dt>
       <dd className="font-semibold">
-        <span className={yieldRatio >= 0 ? "text-green-600" : "text-red-600"}>
-          <Percent value={yieldRatio} signDisplay="exceptZero" />
+        <span
+          className={
+            normalizedYieldRatio === 0
+              ? "text-zinc-600"
+              : normalizedYieldRatio > 0
+              ? "text-green-600"
+              : "text-red-600"
+          }
+        >
+          <Percent value={normalizedYieldRatio} signDisplay="exceptZero" />
         </span>
       </dd>
     </div>

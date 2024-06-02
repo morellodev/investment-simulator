@@ -1,5 +1,9 @@
 export const PHI = 1.618_033_988_749;
 
+export function clamp(value: number, min: number, max: number): number {
+  return Math.min(Math.max(value, min), max);
+}
+
 export function calculateTotalInvested(args: {
   initialInvestment: number;
   monthlyContribution: number;

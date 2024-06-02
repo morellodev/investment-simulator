@@ -19,7 +19,7 @@ export const PortfolioSelect: FC = () => {
         <RadioGroupPrimitive.Item
           key={index}
           value={String(rate)}
-          className="inline-flex items-center justify-between gap-4 px-4 py-3 bg-white rounded-md outline-none select-none group aria-checked:bg-black aria-checked:text-white focus:ring-2 focus:ring-offset-2 focus:ring-zinc-900"
+          className="inline-flex items-center justify-between gap-4 px-4 py-3 transition-shadow bg-white rounded-md outline-none select-none group aria-checked:bg-black aria-checked:text-white focus:ring-2 focus:ring-offset-2 focus:ring-zinc-900"
         >
           <span>{label}</span>
           <div className="flex items-center justify-center border border-black rounded-full text-zinc-900 size-5 group-aria-checked:border-none overflow-clip">
