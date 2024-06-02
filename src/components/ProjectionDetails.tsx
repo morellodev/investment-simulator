@@ -17,8 +17,8 @@ const InvestmentReturn: FC = () => {
             normalizedYieldRatio === 0
               ? "text-zinc-600"
               : normalizedYieldRatio > 0
-              ? "text-green-600"
-              : "text-red-600"
+              ? "text-green-700"
+              : "text-red-700"
           }
         >
           <Percent value={normalizedYieldRatio} signDisplay="exceptZero" />

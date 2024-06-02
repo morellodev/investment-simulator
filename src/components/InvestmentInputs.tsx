@@ -42,6 +42,7 @@ const InitialInvestmentField: FC = () => {
         }}
       />
       <Slider
+        ariaLabel="Initial Investment"
         min={MIN_INITIAL_INVESTMENT}
         max={MAX_INITIAL_INVESTMENT}
         step={100}
@@ -81,6 +82,7 @@ const MonthlyContributionField: FC = () => {
         }}
       />
       <Slider
+        ariaLabel="Monthly Contribution"
         min={MIN_MONTHLY_CONTRIBUTION}
         max={MAX_MONTHLY_CONTRIBUTION}
         step={50}
@@ -110,6 +112,7 @@ const TimeHorizonField: FC = () => {
         }}
       />
       <Slider
+        ariaLabel="Time Horizon"
         min={MIN_YEARS}
         max={MAX_YEARS}
         value={years}
