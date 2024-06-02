@@ -52,7 +52,7 @@ export const Input: FC<ComponentProps<"input">> = (props) => {
     <input
       id={id}
       {...props}
-      className="block w-full p-4 transition-shadow border-0 rounded-md text-zinc-900 placeholder:text-zinc-400 focus:ring-2 focus:ring-inset focus:ring-zinc-900"
+      className="block w-full p-4 transition-shadow border-0 rounded-md tabular-nums text-zinc-900 placeholder:text-zinc-400 focus:ring-2 focus:ring-inset focus:ring-zinc-900"
     />
   );
 };

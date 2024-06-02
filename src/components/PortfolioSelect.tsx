@@ -23,7 +23,7 @@ export const PortfolioSelect: FC = () => {
         >
           <span>{label}</span>
           <div className="flex items-center justify-center border border-black rounded-full text-zinc-900 size-5 group-aria-checked:border-none overflow-clip">
-            <RadioGroupPrimitive.Indicator className="size-full bg-lime-100">
+            <RadioGroupPrimitive.Indicator className="bg-white size-full">
               <CheckIcon className="size-full" />
             </RadioGroupPrimitive.Indicator>
           </div>

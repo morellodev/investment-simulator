@@ -17,12 +17,12 @@ export const Slider: FC<Props> = ({ min, max, step = 1, value, onChange }) => {
       step={step}
       value={[value]}
       onValueChange={([v]) => onChange(v)}
-      className="relative flex items-center w-full h-6 select-none touch-none"
+      className="relative flex items-center w-full h-6 select-none touch-none group"
     >
       <SliderPrimitive.Track className="relative h-1 bg-white rounded-full grow">
         <SliderPrimitive.Range className="absolute h-full bg-black rounded-full" />
       </SliderPrimitive.Track>
-      <SliderPrimitive.Thumb className="block transition bg-white rounded-full ring ring-black size-4 hover:bg-lime-100 focus:outline-none focus:scale-125" />
+      <SliderPrimitive.Thumb className="block transition bg-white rounded-full ring ring-black size-4 group-hover:scale-125 focus:outline-none focus:scale-125" />
     </SliderPrimitive.Root>
   );
 };
