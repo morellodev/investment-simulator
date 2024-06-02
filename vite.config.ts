@@ -12,7 +12,7 @@ export default defineConfig({
     createHtmlPlugin({
       inject: {
         data: {
-          deployUrl: process.env.VERCEL_PROJECT_PRODUCTION_URL,
+          deployUrl: process.env.VERCEL_URL,
         },
       },
     }),
