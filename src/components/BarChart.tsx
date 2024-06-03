@@ -21,7 +21,7 @@ export const BarChart: FC<Props> = ({ series }) => {
   return (
     <svg className="fill-current size-full">
       {coords.map(([x, y], i) => (
-        <TooltipPrimitive.Root key={i}>
+        <TooltipPrimitive.Root key={i} delayDuration={0}>
           <TooltipPrimitive.Trigger asChild>
             <rect
               width={`${barWidth}%`}
