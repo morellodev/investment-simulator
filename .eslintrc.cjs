@@ -14,6 +14,7 @@ module.exports = {
     react: { version: "detect" },
   },
   rules: {
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react-compiler/react-compiler": "error",
     "react-refresh/only-export-components": [

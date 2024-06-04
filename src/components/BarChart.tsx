@@ -19,7 +19,7 @@ export const BarChart: FC<Props> = ({ series }) => {
   ]);
 
   return (
-    <svg className="fill-current size-full">
+    <svg className="fill-primary size-full">
       {coords.map(([x, y], i) => (
         <TooltipPrimitive.Root key={i} delayDuration={0}>
           <TooltipPrimitive.Trigger asChild>
@@ -33,17 +33,17 @@ export const BarChart: FC<Props> = ({ series }) => {
           <TooltipPrimitive.Portal>
             <TooltipPrimitive.Content
               sideOffset={5}
-              className="px-1.5 py-1 md:px-3 md:py-2 font-medium bg-white rounded shadow"
+              className="px-1.5 py-1 md:px-3 md:py-2 font-medium bg-background rounded shadow"
             >
               <div className="flex flex-col items-center">
-                <span className="text-sm text-zinc-600 md:text-md">
+                <span className="text-sm text-muted-foreground md:text-md">
                   Year {i + 1}
                 </span>
-                <span className="text-md md:text-base">
+                <span className="text-md text-foreground md:text-base">
                   <Currency value={series[i]} />
                 </span>
               </div>
-              <TooltipPrimitive.Arrow className="fill-white" />
+              <TooltipPrimitive.Arrow className="fill-background" />
             </TooltipPrimitive.Content>
           </TooltipPrimitive.Portal>
         </TooltipPrimitive.Root>
