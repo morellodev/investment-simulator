@@ -9,14 +9,14 @@ import { Card } from "./components/ui/card";
 export const App: FC = () => {
   return (
     <div className="container">
-      <div className="p-6 bg-white md:p-10 lg:p-20">
+      <div className="p-6 md:p-10 lg:p-20">
         <div className="lg:w-1/2">
           <h1 className="text-3xl font-semibold text-balance md:text-4xl lg:text-5xl">
             Simulate your investment return
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 mt-8 md:mt-10 lg:mt-20">
+        <div className="grid grid-cols-2 gap-4 mt-8 md:mt-10 lg:mt-20">
           <section className="col-span-full">
             <Card className="h-full px-4 py-5 lg:px-9 lg:py-8">
               <InvestmentInputs />
