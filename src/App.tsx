@@ -1,17 +1,22 @@
-import { FC } from "react";
+import { FC, Suspense, lazy } from "react";
 import { InvestmentInputs } from "./components/InvestmentInputs";
 import { InvestmentOutlook } from "./components/InvestmentOutlook";
 import { PortfolioSelect } from "./components/PortfolioSelect";
-import { ProjectionChart } from "./components/ProjectionChart";
 import { ProjectionDetails } from "./components/ProjectionDetails";
 import { Card } from "./components/ui/card";
 
+const ProjectionChartLazy = lazy(() =>
+  import("./components/ProjectionChart").then((module) => ({
+    default: module.ProjectionChart,
+  }))
+);
+
 export const App: FC = () => {
   return (
-    <div className="container">
+    <main className="container">
       <div className="p-6 md:p-10 lg:p-20">
         <div className="lg:w-1/2">
-          <h1 className="text-3xl font-semibold text-balance md:text-4xl lg:text-5xl">
+          <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1] text-balance">
             Simulate your investment return
           </h1>
         </div>
@@ -39,11 +44,21 @@ export const App: FC = () => {
 
           <section className="col-span-full">
             <Card className="h-full px-4 py-5 lg:px-9 lg:py-8">
-              <ProjectionChart />
+              <div className="h-48 md:h-64 lg:h-80">
+                <Suspense
+                  fallback={
+                    <div className="flex items-center justify-center h-full text-sm text-muted-foreground">
+                      Loading chart...
+                    </div>
+                  }
+                >
+                  <ProjectionChartLazy />
+                </Suspense>
+              </div>
             </Card>
           </section>
         </div>
       </div>
-    </div>
+    </main>
   );
 };

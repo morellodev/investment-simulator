@@ -23,6 +23,7 @@
     "react": "19.0.0-rc.0",
     "react-dom": "19.0.0-rc.0",
     "react-hook-form": "^7.51.5",
+    "recharts": "2.13.0-alpha.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8",
@@ -51,7 +52,8 @@
   "pnpm": {
     "overrides": {
       "@types/react": "npm:types-react@rc",
-      "@types/react-dom": "npm:types-react-dom@rc"
+      "@types/react-dom": "npm:types-react-dom@rc",
+      "react-is": "^19.0.0-rc-bf3a29d097-20240603"
     }
   }
 }
