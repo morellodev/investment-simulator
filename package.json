@@ -15,7 +15,6 @@
     "@radix-ui/react-slider": "^1.1.2",
     "react": "19.0.0-rc.0",
     "react-dom": "19.0.0-rc.0",
-    "zod": "^3.23.8",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
