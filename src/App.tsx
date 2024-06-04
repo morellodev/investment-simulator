@@ -1,10 +1,15 @@
-import { FC } from "react";
+import { FC, Suspense, lazy } from "react";
 import { InvestmentInputs } from "./components/InvestmentInputs";
 import { InvestmentOutlook } from "./components/InvestmentOutlook";
 import { PortfolioSelect } from "./components/PortfolioSelect";
-import { ProjectionChart } from "./components/ProjectionChart";
 import { ProjectionDetails } from "./components/ProjectionDetails";
 import { Card } from "./components/ui/card";
+
+const ProjectionChartLazy = lazy(() =>
+  import("./components/ProjectionChart").then((module) => ({
+    default: module.ProjectionChart,
+  }))
+);
 
 export const App: FC = () => {
   return (
@@ -39,7 +44,17 @@ export const App: FC = () => {
 
           <section className="col-span-full">
             <Card className="h-full px-4 py-5 lg:px-9 lg:py-8">
-              <ProjectionChart />
+              <div className="h-48 md:h-64 lg:h-80">
+                <Suspense
+                  fallback={
+                    <div className="flex items-center justify-center h-full text-sm text-muted-foreground">
+                      Loading chart...
+                    </div>
+                  }
+                >
+                  <ProjectionChartLazy />
+                </Suspense>
+              </div>
             </Card>
           </section>
         </div>
