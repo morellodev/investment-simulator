@@ -15,7 +15,7 @@ const InvestmentReturn: FC = () => {
         <span
           className={
             normalizedYieldRatio === 0
-              ? "text-zinc-600"
+              ? "text-muted-foreground"
               : normalizedYieldRatio > 0
               ? "text-green-700"
               : "text-red-700"
