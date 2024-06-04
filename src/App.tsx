@@ -14,7 +14,7 @@ const ProjectionChartLazy = lazy(() =>
 export const App: FC = () => {
   return (
     <main className="container">
-      <div className="p-6 md:p-10 lg:p-20">
+      <div className="py-6 md:py-10 lg:py-20">
         <div className="lg:w-1/2">
           <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1] text-balance">
             Simulate your investment return
