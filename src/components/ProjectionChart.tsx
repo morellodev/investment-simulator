@@ -1,35 +1,56 @@
 import { FC } from "react";
-import { useInvestmentStore } from "../store/investmentStore";
-import { calculateFutureInvestmentValue } from "../utils/math";
-import { BarChart } from "./BarChart";
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import {
+  useInvestmentStore,
+  useProjectionSeries,
+} from "../store/investmentStore";
 
 export const ProjectionChart: FC = () => {
-  const initialInvestment = useInvestmentStore(
-    (state) => state.initialInvestment
-  );
-  const monthlyContribution = useInvestmentStore(
-    (state) => state.monthlyContribution
-  );
-  const interestRate = useInvestmentStore((state) => state.interestRate);
-  const years = useInvestmentStore((state) => state.years);
+  const currency = useInvestmentStore((state) => state.currency);
+  const series = useProjectionSeries();
 
-  const series = Array.from({ length: years }, (_, i) =>
-    calculateFutureInvestmentValue({
-      years: i + 1,
-      initialInvestment,
-      monthlyContribution,
-      interestRate,
-    })
-  );
+  const data = series.map((value, index) => [index + 1, value]);
 
   return (
     <div className="h-48 md:h-64 lg:h-80">
       {series.length === 0 ? (
-        <div className="flex items-center justify-center h-full text-muted-foreground">
+        <div className="flex items-center justify-center h-full text-sm text-muted-foreground">
           Empty chart
         </div>
       ) : (
-        <BarChart series={series} />
+        <ResponsiveContainer>
+          {/* @ts-expect-error Type incompatibility between recharts and React 19 */}
+          <BarChart data={data}>
+            <XAxis
+              dataKey="0"
+              stroke="#888888"
+              fontSize={12}
+              tickLine={false}
+              axisLine={false}
+              className="tabular-nums"
+            />
+            <YAxis
+              stroke="#888888"
+              fontSize={12}
+              tickLine={false}
+              axisLine={false}
+              className="tabular-nums"
+              tickFormatter={(value: number) =>
+                value.toLocaleString("en-US", {
+                  style: "currency",
+                  currency,
+                  notation: "compact",
+                })
+              }
+            />
+            <Bar
+              dataKey="1"
+              fill="currentColor"
+              radius={[4, 4, 0, 0]}
+              className="fill-primary"
+            />
+          </BarChart>
+        </ResponsiveContainer>
       )}
     </div>
   );

@@ -74,3 +74,15 @@ export const useYieldRatio = () =>
       futureInvestmentValue: calculateFutureInvestmentValue(state),
     })
   );
+
+export const useProjectionSeries = () =>
+  useInvestmentStore((state) =>
+    Array.from({ length: state.years }, (_, i) =>
+      calculateFutureInvestmentValue({
+        years: i + 1,
+        initialInvestment: state.initialInvestment,
+        monthlyContribution: state.monthlyContribution,
+        interestRate: state.interestRate,
+      })
+    )
+  );
