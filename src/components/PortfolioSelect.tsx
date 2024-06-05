@@ -38,7 +38,7 @@ export const PortfolioSelect: FC = () => {
                     <RadioGroupPrimitive.Item
                       key={index}
                       value={String(rate)}
-                      className="inline-flex items-center justify-between gap-4 px-4 py-3 border rounded-md outline-none select-none bg-background text-foreground ring-offset-background group aria-checked:bg-primary aria-checked:border-transparent aria-checked:text-primary-foreground focus:ring-2 focus:ring-offset-2 focus:ring-ring"
+                      className="inline-flex items-center justify-between gap-4 px-4 py-3 transition-shadow border rounded-md outline-none select-none bg-background text-foreground ring-offset-background group aria-checked:bg-primary aria-checked:border-transparent aria-checked:text-primary-foreground focus:ring-2 focus:ring-offset-2 focus:ring-ring"
                     >
                       <span>{label}</span>
                       <div className="flex items-center justify-center border rounded-full text-primary size-5 group-aria-checked:border-none overflow-clip">
