@@ -15,7 +15,7 @@ export const PortfolioSelect: FC = () => {
   return (
     <fieldset className="space-y-2">
       <Label asChild>
-        <legend>Select Portfolio</legend>
+        <legend className="leading-normal">Select Portfolio</legend>
       </Label>
       <RadioGroupPrimitive.Root
         aria-describedby={descriptionId}
