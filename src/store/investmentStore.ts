@@ -3,9 +3,9 @@ import { persist } from "zustand/middleware";
 import { Currency } from "../data/currencies";
 import {
   calculateFutureInvestmentValue,
+  calculateRateOfReturn,
+  calculateReturnValue,
   calculateTotalInvested,
-  calculateYieldRatio,
-  calculateYieldValue,
 } from "../utils/math";
 
 type State = {
@@ -59,17 +59,17 @@ export const useTotalInvested = () =>
 export const useFutureInvestmentValue = () =>
   useInvestmentStore(calculateFutureInvestmentValue);
 
-export const useYieldValue = () =>
+export const useReturnValue = () =>
   useInvestmentStore((state) =>
-    calculateYieldValue({
+    calculateReturnValue({
       totalInvested: calculateTotalInvested(state),
       futureInvestmentValue: calculateFutureInvestmentValue(state),
     })
   );
 
-export const useYieldRatio = () =>
+export const useRateOfReturn = () =>
   useInvestmentStore((state) =>
-    calculateYieldRatio({
+    calculateRateOfReturn({
       totalInvested: calculateTotalInvested(state),
       futureInvestmentValue: calculateFutureInvestmentValue(state),
     })

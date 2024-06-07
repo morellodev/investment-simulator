@@ -26,16 +26,16 @@ export function calculateFutureInvestmentValue(args: {
   return compoundInterestForPrincipal + futureValueOfSeries;
 }
 
-export function calculateYieldValue(args: {
+export function calculateReturnValue(args: {
   totalInvested: number;
   futureInvestmentValue: number;
 }): number {
   return args.futureInvestmentValue - args.totalInvested;
 }
 
-export function calculateYieldRatio(args: {
+export function calculateRateOfReturn(args: {
   totalInvested: number;
   futureInvestmentValue: number;
 }): number {
-  return calculateYieldValue(args) / args.totalInvested;
+  return calculateReturnValue(args) / args.totalInvested;
 }

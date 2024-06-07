@@ -1,12 +1,12 @@
 import { FC } from "react";
-import { useYieldRatio, useYieldValue } from "../store/investmentStore";
+import { useRateOfReturn, useReturnValue } from "../store/investmentStore";
 import { Currency } from "./Currency";
 import { Percent } from "./Percent";
 
 const InvestmentReturn: FC = () => {
-  const yieldRatio = useYieldRatio();
+  const returnRate = useRateOfReturn();
 
-  const normalizedYieldRatio = Number.isNaN(yieldRatio) ? 0 : yieldRatio;
+  const normalizedReturnRate = Number.isNaN(returnRate) ? 0 : returnRate;
 
   return (
     <div className="flex justify-between px-4">
@@ -14,14 +14,14 @@ const InvestmentReturn: FC = () => {
       <dd className="font-semibold">
         <span
           className={
-            normalizedYieldRatio === 0
+            normalizedReturnRate === 0
               ? "text-muted-foreground"
-              : normalizedYieldRatio > 0
+              : normalizedReturnRate > 0
               ? "text-green-700"
               : "text-red-700"
           }
         >
-          <Percent value={normalizedYieldRatio} signDisplay="exceptZero" />
+          <Percent value={normalizedReturnRate} signDisplay="exceptZero" />
         </span>
       </dd>
     </div>
@@ -29,13 +29,13 @@ const InvestmentReturn: FC = () => {
 };
 
 const TotalEarned: FC = () => {
-  const yieldValue = useYieldValue();
+  const returnValue = useReturnValue();
 
   return (
     <div className="flex justify-between px-4">
       <dt>Total Earned</dt>
       <dd className="font-semibold">
-        <Currency value={yieldValue} />
+        <Currency value={returnValue} />
       </dd>
     </div>
   );
