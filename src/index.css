@@ -73,10 +73,6 @@
     @apply border-border;
   }
 
-  html {
-    font-display: swap;
-  }
-
   body {
     @apply bg-background text-foreground;
   }
