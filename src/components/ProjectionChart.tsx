@@ -1,9 +1,18 @@
 import { FC } from "react";
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import {
+  Bar,
+  BarChart,
+  ResponsiveContainer,
+  Tooltip,
+  TooltipProps,
+  XAxis,
+  YAxis,
+} from "recharts";
 import {
   useInvestmentStore,
   useProjectionSeries,
 } from "../store/investmentStore";
+import { Currency } from "./Currency";
 
 export const ProjectionChart: FC = () => {
   const currency = useInvestmentStore((state) => state.currency);
@@ -41,6 +50,14 @@ export const ProjectionChart: FC = () => {
             })
           }
         />
+        <Tooltip
+          content={<CustomTooltip />}
+          cursor={{
+            fill: "hsl(var(--secondary))",
+            // @ts-expect-error This is remapped by recharts
+            radius: [4, 4, 0, 0],
+          }}
+        />
         <Bar
           dataKey="1"
           fill="currentColor"
@@ -49,5 +66,22 @@ export const ProjectionChart: FC = () => {
         />
       </BarChart>
     </ResponsiveContainer>
+  );
+};
+
+const CustomTooltip: FC<TooltipProps<number, string>> = ({
+  active,
+  label: year,
+  payload,
+}) => {
+  if (!active || payload?.[0].value === undefined) return null;
+
+  return (
+    <div className="px-3 py-2 border rounded shadow text-card-foreground bg-card border-border">
+      <h3 className="text-sm text-muted-foreground">Year {year}</h3>
+      <p className="font-medium">
+        <Currency value={payload[0].value} />
+      </p>
+    </div>
   );
 };
