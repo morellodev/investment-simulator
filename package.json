@@ -47,7 +47,6 @@
     "tailwindcss": "^3.4.4",
     "typescript": "^5.2.2",
     "vite": "^5.2.13",
-    "vite-plugin-html": "^3.2.2",
     "vite-plugin-sitemap": "^0.6.2",
     "vite-tsconfig-paths": "^4.3.2"
   },
