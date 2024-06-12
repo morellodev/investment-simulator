@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { FormattedNumber } from "./FormattedNumber";
-import { useInvestmentStore } from "../store/investmentStore";
+import { useInvestmentStore } from "@/store/investmentStore";
 
 type Props = { value: number } & Omit<
   Intl.NumberFormatOptions,

@@ -1,8 +1,8 @@
-import { FC } from "react";
 import {
   useFutureInvestmentValue,
   useTotalInvested,
-} from "../store/investmentStore";
+} from "@/store/investmentStore";
+import { FC } from "react";
 import { Currency } from "./Currency";
 
 const TotalInvested: FC = () => {

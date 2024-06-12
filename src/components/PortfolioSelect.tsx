@@ -1,8 +1,8 @@
+import { portfolios } from "@/data/portfolios";
+import { useInvestmentStore } from "@/store/investmentStore";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { CheckIcon } from "lucide-react";
 import { FC, useId } from "react";
-import { portfolios } from "../data/portfolios";
-import { useInvestmentStore } from "../store/investmentStore";
 import { ReturnRate } from "./ReturnRate";
 import { Label } from "./ui/label";
 

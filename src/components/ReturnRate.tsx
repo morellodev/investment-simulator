@@ -1,5 +1,5 @@
+import { useInvestmentStore } from "@/store/investmentStore";
 import { FC } from "react";
-import { useInvestmentStore } from "../store/investmentStore";
 import { Percent } from "./Percent";
 
 export const ReturnRate: FC = () => {

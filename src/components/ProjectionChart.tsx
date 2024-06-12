@@ -1,3 +1,7 @@
+import {
+  useInvestmentStore,
+  useProjectionSeries,
+} from "@/store/investmentStore";
 import { FC } from "react";
 import {
   Bar,
@@ -8,10 +12,6 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import {
-  useInvestmentStore,
-  useProjectionSeries,
-} from "../store/investmentStore";
 import { Currency } from "./Currency";
 
 export const ProjectionChart: FC = () => {

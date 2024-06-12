@@ -1,12 +1,12 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import { Currency } from "../data/currencies";
+import { Currency } from "@/data/currencies";
 import {
   calculateFutureInvestmentValue,
   calculateRateOfReturn,
   calculateReturnValue,
   calculateTotalInvested,
-} from "../utils/math";
+} from "@/utils/math";
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 type State = {
   currency: Currency;

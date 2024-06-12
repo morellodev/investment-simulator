@@ -1,5 +1,5 @@
+import { Currency } from "@/data/currencies";
 import { FC } from "react";
-import { Currency } from "../data/currencies";
 
 export const CurrencySymbol: FC<{ currency: Currency }> = ({ currency }) => {
   const currencyPart = new Intl.NumberFormat("en-US", {

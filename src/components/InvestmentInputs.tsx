@@ -1,4 +1,3 @@
-import { FC, useId } from "react";
 import {
   MAX_INITIAL_INVESTMENT,
   MAX_MONTHLY_CONTRIBUTION,
@@ -6,9 +5,10 @@ import {
   MIN_INITIAL_INVESTMENT,
   MIN_MONTHLY_CONTRIBUTION,
   MIN_YEARS,
-} from "../constants";
-import { useInvestmentStore } from "../store/investmentStore";
-import { clamp } from "../utils/math";
+} from "@/constants";
+import { useInvestmentStore } from "@/store/investmentStore";
+import { clamp } from "@/utils/math";
+import { FC, useId } from "react";
 import { CurrencySymbol } from "./CurrencySymbol";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
