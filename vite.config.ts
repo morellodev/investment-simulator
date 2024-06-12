@@ -1,16 +1,12 @@
 import react from "@vitejs/plugin-react";
-import sitemap from "vite-plugin-sitemap";
-import path from "node:path";
 import { defineConfig } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html";
+import sitemap from "vite-plugin-sitemap";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
   plugins: [
+    tsconfigPaths(),
     react({
       babel: {
         plugins: ["babel-plugin-react-compiler"],
