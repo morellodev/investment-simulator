@@ -18,7 +18,9 @@ export const ProjectionChart: FC = () => {
   const currency = useInvestmentStore((state) => state.currency);
   const series = useProjectionSeries();
 
-  const data = series.map((value, index) => [index + 1, value]);
+  const currentYear = new Date().getFullYear();
+
+  const data = series.map((value, index) => [currentYear + index + 1, value]);
 
   return series.length === 0 ? (
     <div className="flex items-center justify-center h-full text-sm text-muted-foreground">
