@@ -27,7 +27,7 @@ export const PortfolioSelect: FC = () => {
           <PortfolioSelectItem key={index} label={label} value={String(rate)} />
         ))}
       </RadioGroupPrimitive.Root>
-      <p id={descriptionId} className="text-sm text-muted-foreground">
+      <p id={descriptionId} className="text-xs text-muted-foreground">
         <ReturnRate />
       </p>
     </fieldset>
