@@ -79,9 +79,11 @@ const CustomTooltip: FC<TooltipProps<number, string>> = ({
   if (!active || payload?.[0].value === undefined) return null;
 
   return (
-    <div className="px-3 py-2 border rounded shadow text-card-foreground bg-card border-border">
-      <h3 className="text-sm text-muted-foreground">Year {year}</h3>
-      <p className="font-medium">
+    <div className="p-2 border rounded-lg shadow-sm bg-background">
+      <h3 className="text-xs font-light uppercase text-muted-foreground">
+        Year {year}
+      </h3>
+      <p className="font-bold">
         <Currency value={payload[0].value} />
       </p>
     </div>
