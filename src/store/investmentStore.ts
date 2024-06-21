@@ -5,7 +5,7 @@ import {
   calculateRateOfReturn,
   calculateReturnValue,
   calculateTotalInvested,
-} from "@/utils/math";
+} from "@/utils/finance";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
