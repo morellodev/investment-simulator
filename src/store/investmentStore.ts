@@ -38,7 +38,9 @@ const initialState: State = {
   interestRate: 0.075,
 };
 
-export const useInvestmentStore = create<State & Actions>()(
+type InvestmentStore = State & Actions;
+
+export const useInvestmentStore = create<InvestmentStore>()(
   persist(
     (set) => {
       return {
