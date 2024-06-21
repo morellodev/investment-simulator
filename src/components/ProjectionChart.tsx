@@ -16,6 +16,7 @@ import { Currency } from "./Currency";
 
 export const ProjectionChart: FC = () => {
   const currency = useInvestmentStore((state) => state.currency);
+  const locale = useInvestmentStore((state) => state.locale);
   const series = useProjectionSeries();
 
   const currentYear = new Date().getFullYear();
@@ -45,7 +46,7 @@ export const ProjectionChart: FC = () => {
           axisLine={false}
           className="tabular-nums"
           tickFormatter={(value: number) =>
-            value.toLocaleString("en-US", {
+            value.toLocaleString(locale, {
               style: "currency",
               currency,
               notation: "compact",

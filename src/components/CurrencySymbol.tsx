@@ -1,8 +1,11 @@
 import { Currency } from "@/data/currencies";
+import { useInvestmentStore } from "@/store/investmentStore";
 import { FC } from "react";
 
 export const CurrencySymbol: FC<{ currency: Currency }> = ({ currency }) => {
-  const currencyPart = new Intl.NumberFormat("en-US", {
+  const locale = useInvestmentStore((state) => state.locale);
+
+  const currencyPart = new Intl.NumberFormat(locale, {
     style: "currency",
     currency,
   })

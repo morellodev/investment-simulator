@@ -1,4 +1,5 @@
 import { Currency } from "@/data/currencies";
+import { Locale } from "@/data/locales";
 import {
   calculateFutureInvestmentValue,
   calculateRateOfReturn,
@@ -10,6 +11,7 @@ import { persist } from "zustand/middleware";
 
 type State = {
   currency: Currency;
+  locale: Locale;
   initialInvestment: number;
   monthlyContribution: number;
   years: number;
@@ -18,6 +20,7 @@ type State = {
 
 type Actions = {
   setCurrency: (currency: State["currency"]) => void;
+  setLocale: (locale: State["locale"]) => void;
   setInitialInvestment: (initialInvestment: State["initialInvestment"]) => void;
   setMonthlyContribution: (
     monthlyContribution: State["monthlyContribution"]
@@ -28,6 +31,7 @@ type Actions = {
 
 const initialState: State = {
   currency: "EUR",
+  locale: "en-US",
   initialInvestment: 1000,
   monthlyContribution: 100,
   years: 10,
@@ -40,6 +44,7 @@ export const useInvestmentStore = create<State & Actions>()(
       return {
         ...initialState,
         setCurrency: (currency) => set({ currency }),
+        setLocale: (locale) => set({ locale }),
         setInitialInvestment: (initialInvestment) => set({ initialInvestment }),
         setMonthlyContribution: (monthlyContribution) =>
           set({ monthlyContribution }),
