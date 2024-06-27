@@ -17,8 +17,8 @@ const InvestmentReturn: FC = () => {
             normalizedReturnRate === 0
               ? "text-muted-foreground"
               : normalizedReturnRate > 0
-              ? "text-green-700"
-              : "text-red-700"
+              ? "text-green-700 dark:text-green-300"
+              : "text-red-700 dark:text-red-300"
           }
         >
           <Percent value={normalizedReturnRate} signDisplay="exceptZero" />
