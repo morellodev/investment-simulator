@@ -1,6 +1,6 @@
-import { Currency } from "@/data/currencies";
+import type { Currency } from "@/data/currencies";
 import { useInvestmentStore } from "@/store/investmentStore";
-import { FC } from "react";
+import type { FC } from "react";
 
 export const CurrencySymbol: FC<{ currency: Currency }> = ({ currency }) => {
   const locale = useInvestmentStore((state) => state.locale);

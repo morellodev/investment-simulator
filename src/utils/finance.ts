@@ -13,7 +13,7 @@ export function calculateFutureInvestmentValue(args: {
   years: number;
 }): number {
   const periods = 12 * args.years; // n * t
-  const compoundFactor = Math.pow(1 + args.interestRate / 12, periods);
+  const compoundFactor = (1 + args.interestRate / 12) ** periods;
   const compoundInterestForPrincipal = args.initialInvestment * compoundFactor;
   const futureValueOfSeries =
     args.monthlyContribution *

@@ -1,5 +1,5 @@
-import { Currency } from "@/data/currencies";
-import { Locale } from "@/data/locales";
+import type { Currency } from "@/data/currencies";
+import type { Locale } from "@/data/locales";
 import {
   calculateFutureInvestmentValue,
   calculateRateOfReturn,
@@ -23,7 +23,7 @@ type Actions = {
   setLocale: (locale: State["locale"]) => void;
   setInitialInvestment: (initialInvestment: State["initialInvestment"]) => void;
   setMonthlyContribution: (
-    monthlyContribution: State["monthlyContribution"]
+    monthlyContribution: State["monthlyContribution"],
   ) => void;
   setYears: (years: State["years"]) => void;
   setInterestRate: (interestRate: number) => void;
@@ -56,8 +56,8 @@ export const useInvestmentStore = create<InvestmentStore>()(
     },
     {
       name: "investment-store",
-    }
-  )
+    },
+  ),
 );
 
 export const useTotalInvested = () =>
@@ -71,7 +71,7 @@ export const useReturnValue = () =>
     calculateReturnValue({
       totalInvested: calculateTotalInvested(state),
       futureInvestmentValue: calculateFutureInvestmentValue(state),
-    })
+    }),
   );
 
 export const useRateOfReturn = () =>
@@ -79,7 +79,7 @@ export const useRateOfReturn = () =>
     calculateRateOfReturn({
       totalInvested: calculateTotalInvested(state),
       futureInvestmentValue: calculateFutureInvestmentValue(state),
-    })
+    }),
   );
 
 export const useProjectionSeries = () =>
@@ -90,6 +90,6 @@ export const useProjectionSeries = () =>
         initialInvestment: state.initialInvestment,
         monthlyContribution: state.monthlyContribution,
         interestRate: state.interestRate,
-      })
-    )
+      }),
+    ),
   );
