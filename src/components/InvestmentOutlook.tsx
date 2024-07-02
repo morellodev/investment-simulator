@@ -2,7 +2,7 @@ import {
   useFutureInvestmentValue,
   useTotalInvested,
 } from "@/store/investmentStore";
-import { FC } from "react";
+import type { FC } from "react";
 import { Currency } from "./Currency";
 
 const TotalInvested: FC = () => {

@@ -3,8 +3,14 @@ import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(
+const mountElement = document.getElementById("root");
+
+if (!mountElement) {
+  throw new Error("Root element not found");
+}
+
+createRoot(mountElement).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 );

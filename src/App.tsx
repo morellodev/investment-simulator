@@ -1,4 +1,4 @@
-import { FC, Suspense, lazy } from "react";
+import { type FC, Suspense, lazy } from "react";
 import { InvestmentInputs } from "./components/InvestmentInputs";
 import { InvestmentOutlook } from "./components/InvestmentOutlook";
 import { PortfolioSelect } from "./components/PortfolioSelect";
@@ -8,7 +8,7 @@ import { Card } from "./components/ui/card";
 const ProjectionChartLazy = lazy(() =>
   import("./components/ProjectionChart").then((module) => ({
     default: module.ProjectionChart,
-  }))
+  })),
 );
 
 export const App: FC = () => {

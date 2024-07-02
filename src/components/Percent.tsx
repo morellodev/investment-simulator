@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { FormattedNumber } from "./FormattedNumber";
 
 type Props = { value: number } & Omit<Intl.NumberFormatOptions, "style">;

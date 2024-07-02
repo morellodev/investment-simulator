@@ -2,7 +2,7 @@ import { portfolios } from "@/data/portfolios";
 import { useInvestmentStore } from "@/store/investmentStore";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { CheckIcon } from "lucide-react";
-import { FC, useId } from "react";
+import { type FC, useId } from "react";
 import { ReturnRate } from "./ReturnRate";
 import { Label } from "./ui/label";
 
@@ -14,7 +14,7 @@ export const PortfolioSelect: FC = () => {
 
   return (
     <fieldset className="space-y-2">
-      <Label asChild>
+      <Label asChild={true}>
         <legend className="leading-normal">Select Portfolio</legend>
       </Label>
       <RadioGroupPrimitive.Root
@@ -23,8 +23,8 @@ export const PortfolioSelect: FC = () => {
         value={String(interestRate)}
         onValueChange={(value) => setInterestRate(Number(value))}
       >
-        {portfolios.map(([label, rate], index) => (
-          <PortfolioSelectItem key={index} label={label} value={String(rate)} />
+        {portfolios.map(([label, rate]) => (
+          <PortfolioSelectItem key={rate} label={label} value={String(rate)} />
         ))}
       </RadioGroupPrimitive.Root>
       <p id={descriptionId} className="text-xs text-muted-foreground">

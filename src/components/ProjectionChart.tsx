@@ -2,13 +2,13 @@ import {
   useInvestmentStore,
   useProjectionSeries,
 } from "@/store/investmentStore";
-import { FC } from "react";
+import type { FC } from "react";
 import {
   Bar,
   BarChart,
   ResponsiveContainer,
   Tooltip,
-  TooltipProps,
+  type TooltipProps,
   XAxis,
   YAxis,
 } from "recharts";

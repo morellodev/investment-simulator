@@ -8,7 +8,7 @@ import {
 } from "@/constants";
 import { useInvestmentStore } from "@/store/investmentStore";
 import { clamp } from "@/utils/math";
-import { FC, useId } from "react";
+import { type FC, useId } from "react";
 import { CurrencySymbol } from "./CurrencySymbol";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -20,10 +20,10 @@ const InitialInvestmentField: FC = () => {
   const currency = useInvestmentStore((state) => state.currency);
 
   const initialInvestment = useInvestmentStore(
-    (state) => state.initialInvestment
+    (state) => state.initialInvestment,
   );
   const setInitialInvestment = useInvestmentStore(
-    (state) => state.setInitialInvestment
+    (state) => state.setInitialInvestment,
   );
 
   return (
@@ -41,7 +41,7 @@ const InitialInvestmentField: FC = () => {
             const n = Number(e.target.value);
             if (Number.isNaN(n)) return;
             setInitialInvestment(
-              clamp(n, MIN_INITIAL_INVESTMENT, MAX_INITIAL_INVESTMENT)
+              clamp(n, MIN_INITIAL_INVESTMENT, MAX_INITIAL_INVESTMENT),
             );
           }}
         />
@@ -63,10 +63,10 @@ const MonthlyContributionField: FC = () => {
   const currency = useInvestmentStore((state) => state.currency);
 
   const monthlyContribution = useInvestmentStore(
-    (state) => state.monthlyContribution
+    (state) => state.monthlyContribution,
   );
   const setMonthlyContribution = useInvestmentStore(
-    (state) => state.setMonthlyContribution
+    (state) => state.setMonthlyContribution,
   );
 
   return (
@@ -84,7 +84,7 @@ const MonthlyContributionField: FC = () => {
             const n = Number(e.target.value);
             if (Number.isNaN(n)) return;
             setMonthlyContribution(
-              clamp(n, MIN_MONTHLY_CONTRIBUTION, MAX_MONTHLY_CONTRIBUTION)
+              clamp(n, MIN_MONTHLY_CONTRIBUTION, MAX_MONTHLY_CONTRIBUTION),
             );
           }}
         />

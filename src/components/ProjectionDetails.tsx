@@ -1,5 +1,5 @@
 import { useRateOfReturn, useReturnValue } from "@/store/investmentStore";
-import { FC } from "react";
+import type { FC } from "react";
 import { Currency } from "./Currency";
 import { Percent } from "./Percent";
 
@@ -17,8 +17,8 @@ const InvestmentReturn: FC = () => {
             normalizedReturnRate === 0
               ? "text-muted-foreground"
               : normalizedReturnRate > 0
-              ? "text-green-700 dark:text-green-300"
-              : "text-red-700 dark:text-red-300"
+                ? "text-green-700 dark:text-green-300"
+                : "text-red-700 dark:text-red-300"
           }
         >
           <Percent value={normalizedReturnRate} signDisplay="exceptZero" />
