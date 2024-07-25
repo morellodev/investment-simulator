@@ -9,7 +9,7 @@ const ProjectionChartLazy = lazy(() => import("./components/ProjectionChart"));
 
 export const App: FC = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen">
       <main className="py-6 md:py-10 lg:py-20">
         <div className="container">
           <div className="lg:w-1/2">
