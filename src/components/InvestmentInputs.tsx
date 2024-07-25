@@ -1,10 +1,7 @@
 import {
-  MAX_INITIAL_INVESTMENT,
-  MAX_MONTHLY_CONTRIBUTION,
-  MAX_YEARS,
-  MIN_INITIAL_INVESTMENT,
-  MIN_MONTHLY_CONTRIBUTION,
-  MIN_YEARS,
+  initialInvestmentRange,
+  investmentDurationYearsRange,
+  monthlyContributionRange,
 } from "@/constants";
 import { useInvestmentStore } from "@/store/investmentStore";
 import { clamp } from "@/utils/math";
@@ -40,15 +37,13 @@ const InitialInvestmentField: FC = () => {
           onChange={(e) => {
             const n = Number(e.target.value);
             if (Number.isNaN(n)) return;
-            setInitialInvestment(
-              clamp(n, MIN_INITIAL_INVESTMENT, MAX_INITIAL_INVESTMENT),
-            );
+            setInitialInvestment(clamp(n, ...initialInvestmentRange));
           }}
         />
       </div>
       <Slider
-        min={MIN_INITIAL_INVESTMENT}
-        max={MAX_INITIAL_INVESTMENT}
+        min={initialInvestmentRange[0]}
+        max={initialInvestmentRange[1]}
         step={100}
         value={[initialInvestment]}
         onValueChange={([v]) => setInitialInvestment(v)}
@@ -83,15 +78,13 @@ const MonthlyContributionField: FC = () => {
           onChange={(e) => {
             const n = Number(e.target.value);
             if (Number.isNaN(n)) return;
-            setMonthlyContribution(
-              clamp(n, MIN_MONTHLY_CONTRIBUTION, MAX_MONTHLY_CONTRIBUTION),
-            );
+            setMonthlyContribution(clamp(n, ...monthlyContributionRange));
           }}
         />
       </div>
       <Slider
-        min={MIN_MONTHLY_CONTRIBUTION}
-        max={MAX_MONTHLY_CONTRIBUTION}
+        min={monthlyContributionRange[0]}
+        max={monthlyContributionRange[1]}
         step={50}
         value={[monthlyContribution]}
         onValueChange={([v]) => setMonthlyContribution(v)}
@@ -118,13 +111,13 @@ const TimeHorizonField: FC = () => {
           onChange={(e) => {
             const n = Number(e.target.value);
             if (Number.isNaN(n)) return;
-            setYears(clamp(n, MIN_YEARS, MAX_YEARS));
+            setYears(clamp(n, ...investmentDurationYearsRange));
           }}
         />
       </div>
       <Slider
-        min={MIN_YEARS}
-        max={MAX_YEARS}
+        min={investmentDurationYearsRange[0]}
+        max={investmentDurationYearsRange[1]}
         value={[years]}
         onValueChange={([v]) => setYears(v)}
       />
