@@ -79,7 +79,7 @@ importers:
         version: types-react-dom@19.0.0-rc.1
       '@vitejs/plugin-react':
         specifier: ^4.3.1
-        version: 4.3.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
+        version: 4.3.1(vite@5.3.5(@types/node@20.14.12)(terser@5.31.3))
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.40)
@@ -99,14 +99,14 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4
       vite:
-        specifier: ^5.3.4
-        version: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
+        specifier: ^5.3.5
+        version: 5.3.5(@types/node@20.14.12)(terser@5.31.3)
       vite-plugin-sitemap:
         specifier: ^0.6.2
         version: 0.6.2
       vite-tsconfig-paths:
         specifier: ^4.3.2
-        version: 4.3.2(typescript@5.5.4)(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
+        version: 4.3.2(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.12)(terser@5.31.3))
 
 packages:
 
@@ -1326,8 +1326,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
 
-  react-is@19.0.0-rc-ab2135c7-20240724:
-    resolution: {integrity: sha512-ZDjsO/FVz8wiMRw+XA54R0QFvEDDV3nRBwgRI8DHXLp3i7tiS+1n2c2jEzA15tgQ0yNDCYX7OIBK/GX5M0RJKQ==}
+  react-is@19.0.0-rc-76002254-20240724:
+    resolution: {integrity: sha512-H+2N+kFvO42LYIGNOoxveq+s/F3wDiRjhI6Rt8xyRT5qdgjBQvB8I9g1a20/QZioiJXAfnGT3GaUJL9jCFa5xg==}
 
   react-refresh@0.14.2:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
@@ -1547,8 +1547,8 @@ packages:
       vite:
         optional: true
 
-  vite@5.3.4:
-    resolution: {integrity: sha512-Cw+7zL3ZG9/NZBB8C+8QbQZmR54GwqIz+WMI4b3JgdYJvX+ny9AjJXqkGQlDXSXRP9rP0B4tbciRMOVEKulVOA==}
+  vite@5.3.5:
+    resolution: {integrity: sha512-MdjglKR6AQXQb9JGiS7Rc2wC6uMjcm7Go/NHNO63EwiJXfuk9PgqiP/n5IDJCziMkfw9n4Ubp7lttNwz+8ZVKA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -2229,14 +2229,14 @@ snapshots:
     dependencies:
       '@types/yargs-parser': 21.0.3
 
-  '@vitejs/plugin-react@4.3.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
+  '@vitejs/plugin-react@4.3.1(vite@5.3.5(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
       '@babel/core': 7.24.7
       '@babel/plugin-transform-react-jsx-self': 7.24.7(@babel/core@7.24.7)
       '@babel/plugin-transform-react-jsx-source': 7.24.7(@babel/core@7.24.7)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
+      vite: 5.3.5(@types/node@20.14.12)(terser@5.31.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -2686,13 +2686,13 @@ snapshots:
       '@jest/types': 24.9.0
       ansi-regex: 4.1.1
       ansi-styles: 3.2.1
-      react-is: 19.0.0-rc-ab2135c7-20240724
+      react-is: 19.0.0-rc-76002254-20240724
 
   prop-types@15.8.1:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      react-is: 19.0.0-rc-ab2135c7-20240724
+      react-is: 19.0.0-rc-76002254-20240724
 
   queue-microtask@1.2.3: {}
 
@@ -2705,7 +2705,7 @@ snapshots:
     dependencies:
       react: 19.0.0-rc.0
 
-  react-is@19.0.0-rc-ab2135c7-20240724: {}
+  react-is@19.0.0-rc-76002254-20240724: {}
 
   react-refresh@0.14.2: {}
 
@@ -2747,7 +2747,7 @@ snapshots:
       lodash: 4.17.21
       react: 19.0.0-rc.0
       react-dom: 19.0.0-rc.0(react@19.0.0-rc.0)
-      react-is: 19.0.0-rc-ab2135c7-20240724
+      react-is: 19.0.0-rc-76002254-20240724
       react-smooth: 4.0.1(react-dom@19.0.0-rc.0(react@19.0.0-rc.0))(react@19.0.0-rc.0)
       recharts-scale: 0.4.5
       tiny-invariant: 1.3.3
@@ -2962,18 +2962,18 @@ snapshots:
 
   vite-plugin-sitemap@0.6.2: {}
 
-  vite-tsconfig-paths@4.3.2(typescript@5.5.4)(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3)):
+  vite-tsconfig-paths@4.3.2(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.12)(terser@5.31.3)):
     dependencies:
       debug: 4.3.5
       globrex: 0.1.2
       tsconfck: 3.1.0(typescript@5.5.4)
     optionalDependencies:
-      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
+      vite: 5.3.5(@types/node@20.14.12)(terser@5.31.3)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@5.3.4(@types/node@20.14.12)(terser@5.31.3):
+  vite@5.3.5(@types/node@20.14.12)(terser@5.31.3):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.40
