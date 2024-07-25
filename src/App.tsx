@@ -5,11 +5,7 @@ import { PortfolioSelect } from "./components/PortfolioSelect";
 import { ProjectionDetails } from "./components/ProjectionDetails";
 import { Card } from "./components/ui/card";
 
-const ProjectionChartLazy = lazy(() =>
-  import("./components/ProjectionChart").then((module) => ({
-    default: module.ProjectionChart,
-  })),
-);
+const ProjectionChartLazy = lazy(() => import("./components/ProjectionChart"));
 
 export const App: FC = () => {
   return (

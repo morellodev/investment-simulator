@@ -90,3 +90,5 @@ const CustomTooltip: FC<TooltipProps<number, string>> = ({
     </div>
   );
 };
+
+export default ProjectionChart;
