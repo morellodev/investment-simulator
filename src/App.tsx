@@ -1,4 +1,5 @@
 import { type FC, Suspense, lazy } from "react";
+import { Footer } from "./components/Footer";
 import { InvestmentInputs } from "./components/InvestmentInputs";
 import { InvestmentOutlook } from "./components/InvestmentOutlook";
 import { PortfolioSelect } from "./components/PortfolioSelect";
@@ -9,7 +10,7 @@ const ProjectionChartLazy = lazy(() => import("./components/ProjectionChart"));
 
 export const App: FC = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-svh">
       <main className="py-6 md:py-10 lg:py-20">
         <div className="container">
           <div className="lg:w-1/2">
@@ -58,22 +59,7 @@ export const App: FC = () => {
         </div>
       </main>
 
-      <footer className="pb-6">
-        <div className="container">
-          <p className="text-sm leading-loose text-center text-balance text-muted-foreground md:text-left">
-            Built by{" "}
-            <a
-              href="https://morello.dev"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              Dennis Morello
-            </a>{" "}
-            for educational purposes only.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
