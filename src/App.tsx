@@ -2,7 +2,7 @@ import { type FC, Suspense, lazy } from "react";
 import { Footer } from "./components/Footer";
 import { InvestmentInputs } from "./components/InvestmentInputs";
 import { InvestmentOutlook } from "./components/InvestmentOutlook";
-import { PortfolioSelect } from "./components/PortfolioSelect";
+import { PortfolioComposer } from "./components/PortfolioComposer";
 import { ProjectionDetails } from "./components/ProjectionDetails";
 import { Card } from "./components/ui/card";
 
@@ -28,7 +28,7 @@ export const App: FC = () => {
 
             <section className="col-span-full lg:col-span-1">
               <Card className="h-full px-4 py-5 lg:px-9 lg:py-8">
-                <PortfolioSelect />
+                <PortfolioComposer />
               </Card>
             </section>
 

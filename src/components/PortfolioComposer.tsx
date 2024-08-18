@@ -6,7 +6,7 @@ import { type FC, useId } from "react";
 import { ReturnRate } from "./ReturnRate";
 import { Label } from "./ui/label";
 
-export const PortfolioSelect: FC = () => {
+export const PortfolioComposer: FC = () => {
   const descriptionId = useId();
 
   const interestRate = useInvestmentStore((state) => state.interestRate);
@@ -24,7 +24,7 @@ export const PortfolioSelect: FC = () => {
         onValueChange={(value) => setInterestRate(Number(value))}
       >
         {portfolios.map(([label, rate]) => (
-          <PortfolioSelectItem key={rate} label={label} value={String(rate)} />
+          <PortfolioItem key={rate} label={label} value={String(rate)} />
         ))}
       </RadioGroupPrimitive.Root>
       <p id={descriptionId} className="text-xs text-muted-foreground">
@@ -34,7 +34,7 @@ export const PortfolioSelect: FC = () => {
   );
 };
 
-const PortfolioSelectItem: FC<{ label: string; value: string }> = ({
+const PortfolioItem: FC<{ label: string; value: string }> = ({
   label,
   value,
 }) => {
