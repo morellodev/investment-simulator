@@ -5,6 +5,7 @@ import { InvestmentOutlook } from "./components/InvestmentOutlook";
 import { PortfolioComposer } from "./components/PortfolioComposer";
 import { ProjectionDetails } from "./components/ProjectionDetails";
 import { Card } from "./components/ui/card";
+import { Separator } from "./components/ui/separator";
 
 const ProjectionChartLazy = lazy(() => import("./components/ProjectionChart"));
 
@@ -35,7 +36,7 @@ export const App: FC = () => {
             <section className="col-span-full lg:col-span-1">
               <Card className="h-full px-4 py-5 lg:px-9 lg:py-8">
                 <InvestmentOutlook />
-                <hr className="my-6 border-t-zinc-200" />
+                <Separator className="my-6" />
                 <ProjectionDetails />
               </Card>
             </section>
