@@ -14,11 +14,11 @@ import { Percent } from "./Percent";
 const chartConfig = {
   bonds: {
     label: "Bonds",
-    color: "hsl(var(--chart-3))",
+    color: "hsl(var(--chart-2))",
   },
   stocks: {
     label: "Stocks",
-    color: "hsl(var(--chart-5))",
+    color: "hsl(var(--chart-3))",
   },
 } satisfies ChartConfig;
 
