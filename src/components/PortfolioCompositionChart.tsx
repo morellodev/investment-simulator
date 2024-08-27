@@ -14,11 +14,11 @@ import { Percent } from "./Percent";
 const chartConfig = {
   stocks: {
     label: "Stocks",
-    color: "hsl(var(--chart-4))",
+    color: "hsl(var(--chart-2))",
   },
   bonds: {
     label: "Bonds",
-    color: "hsl(var(--chart-2))",
+    color: "hsl(var(--chart-1))",
   },
 } satisfies ChartConfig;
 
@@ -33,7 +33,7 @@ export const PortfolioCompositionChart: FC = () => {
       <ComposedChart
         layout="vertical"
         data={chartData}
-        margin={{ left: 0, right: 0 }}
+        margin={{ left: 0, right: 0, top: 0, bottom: 0 }}
       >
         <XAxis type="number" hide />
         <YAxis type="category" hide />
@@ -43,7 +43,7 @@ export const PortfolioCompositionChart: FC = () => {
             <ChartTooltipContent
               hideLabel
               formatter={(value, name) => (
-                <div className="flex w-full items-center">
+                <div className="flex items-center w-full">
                   <div
                     className="size-2.5 shrink-0 rounded-[2px] bg-[--color-bg] mr-1.5"
                     style={
@@ -62,15 +62,15 @@ export const PortfolioCompositionChart: FC = () => {
           }
         />
         <Bar
-          dataKey="stocks"
-          stackId="a"
-          fill="var(--color-stocks)"
-          radius={[4, 0, 0, 4]}
-        />
-        <Bar
           dataKey="bonds"
           stackId="a"
           fill="var(--color-bonds)"
+          radius={[4, 0, 0, 4]}
+        />
+        <Bar
+          dataKey="stocks"
+          stackId="a"
+          fill="var(--color-stocks)"
           radius={[0, 4, 4, 0]}
         />
       </ComposedChart>
