@@ -77,3 +77,5 @@ export const PortfolioCompositionChart: FC = () => {
     </ChartContainer>
   );
 };
+
+export default PortfolioCompositionChart;
