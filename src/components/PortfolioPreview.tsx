@@ -16,7 +16,7 @@ export const PortfolioPreview: FC = () => {
           <Suspense
             fallback={
               <div className="relative size-full">
-                <div className="absolute inset-x-0 bg-muted rounded inset-y-1.5" />
+                <div className="absolute inset-x-0 rounded inset-y-1.5 border border-dashed border-muted" />
               </div>
             }
           >

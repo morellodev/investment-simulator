@@ -12,13 +12,13 @@ import { Bar, ComposedChart, XAxis, YAxis } from "recharts";
 import { Percent } from "./Percent";
 
 const chartConfig = {
-  stocks: {
-    label: "Stocks",
-    color: "hsl(var(--chart-2))",
-  },
   bonds: {
     label: "Bonds",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(var(--chart-2))",
+  },
+  stocks: {
+    label: "Stocks",
+    color: "hsl(var(--chart-3))",
   },
 } satisfies ChartConfig;
 
