@@ -3,32 +3,35 @@ import { useInvestmentStore } from "@/store/investmentStore";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { CheckIcon } from "lucide-react";
 import { type FC, useId } from "react";
-import { ReturnRate } from "./ReturnRate";
+import { Percent } from "./Percent";
 import { Label } from "./ui/label";
 
 export const PortfolioComposer: FC = () => {
   const descriptionId = useId();
 
-  const interestRate = useInvestmentStore((state) => state.interestRate);
-  const setInterestRate = useInvestmentStore((state) => state.setInterestRate);
+  const portfolio = useInvestmentStore((state) => state.portfolio);
+  const setPortfolio = useInvestmentStore((state) => state.setPortfolio);
 
   return (
     <fieldset className="space-y-2">
-      <Label asChild={true}>
+      <Label asChild>
         <legend className="leading-normal">Select Portfolio</legend>
       </Label>
       <RadioGroupPrimitive.Root
         aria-describedby={descriptionId}
         className="flex flex-col flex-wrap gap-4 md:flex-row"
-        value={String(interestRate)}
-        onValueChange={(value) => setInterestRate(Number(value))}
+        value={portfolio.id}
+        onValueChange={(value) => {
+          const selectedPortfolio = portfolios.find((p) => p.id === value);
+          if (selectedPortfolio) setPortfolio(selectedPortfolio);
+        }}
       >
-        {portfolios.map(([label, rate]) => (
-          <PortfolioItem key={rate} label={label} value={String(rate)} />
+        {portfolios.map(({ id, name }) => (
+          <PortfolioItem key={id} label={name} value={id} />
         ))}
       </RadioGroupPrimitive.Root>
       <p id={descriptionId} className="text-xs text-muted-foreground">
-        <ReturnRate />
+        <Percent value={portfolio.yoyReturn} /> estimated return
       </p>
     </fieldset>
   );

@@ -3,6 +3,7 @@ import { Footer } from "./components/Footer";
 import { InvestmentInputs } from "./components/InvestmentInputs";
 import { InvestmentOutlook } from "./components/InvestmentOutlook";
 import { PortfolioComposer } from "./components/PortfolioComposer";
+import { PortfolioPreview } from "./components/PortfolioPreview";
 import { ProjectionDetails } from "./components/ProjectionDetails";
 import { Card } from "./components/ui/card";
 import { Separator } from "./components/ui/separator";
@@ -30,6 +31,8 @@ export const App: FC = () => {
             <section className="col-span-full lg:col-span-1">
               <Card className="h-full px-4 py-5 lg:px-9 lg:py-8">
                 <PortfolioComposer />
+                <div className="my-3" />
+                <PortfolioPreview />
               </Card>
             </section>
 
