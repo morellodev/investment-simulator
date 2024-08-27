@@ -52,7 +52,10 @@ export const PortfolioCompositionChart: FC = () => {
                       } as React.CSSProperties
                     }
                   />
-                  {chartConfig[name as keyof typeof chartConfig]?.label || name}
+                  <span className="text-muted-foreground">
+                    {chartConfig[name as keyof typeof chartConfig]?.label ||
+                      name}
+                  </span>
                   <div className="ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums text-foreground">
                     <Percent value={value as number} />
                   </div>
@@ -67,7 +70,10 @@ export const PortfolioCompositionChart: FC = () => {
           fill="var(--color-bonds)"
           radius={[4, 0, 0, 4]}
         >
-          <LabelList className="fill-background" formatter={() => "Bonds"} />
+          <LabelList
+            className="fill-background"
+            formatter={() => chartConfig.bonds.label}
+          />
         </Bar>
         <Bar
           dataKey="stocks"
@@ -75,7 +81,10 @@ export const PortfolioCompositionChart: FC = () => {
           fill="var(--color-stocks)"
           radius={[0, 4, 4, 0]}
         >
-          <LabelList className="fill-background" formatter={() => "Stocks"} />
+          <LabelList
+            className="fill-background"
+            formatter={() => chartConfig.stocks.label}
+          />
         </Bar>
       </ComposedChart>
     </ChartContainer>
