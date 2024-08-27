@@ -7,7 +7,9 @@ const PortfolioCompositionChartLazy = lazy(
 );
 
 export const PortfolioPreview: FC = () => {
-  const portfolio = useInvestmentStore((state) => state.portfolio);
+  const description = useInvestmentStore(
+    ({ portfolio }) => portfolio.description,
+  );
 
   return (
     <Card className="border-none bg-card-foreground">
@@ -23,7 +25,7 @@ export const PortfolioPreview: FC = () => {
             <PortfolioCompositionChartLazy />
           </Suspense>
         </div>
-        <p className="text-xs text-card mt-0.5">{portfolio.description}</p>
+        <p className="text-xs text-card mt-0.5">{description}</p>
       </CardContent>
     </Card>
   );
