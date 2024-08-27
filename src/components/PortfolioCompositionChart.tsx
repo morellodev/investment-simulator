@@ -14,11 +14,11 @@ import { Percent } from "./Percent";
 const chartConfig = {
   bonds: {
     label: "Bonds",
-    color: "hsl(var(--chart-2))",
+    color: "hsl(var(--chart-3))",
   },
   stocks: {
     label: "Stocks",
-    color: "hsl(var(--chart-3))",
+    color: "hsl(var(--chart-5))",
   },
 } satisfies ChartConfig;
 
@@ -33,7 +33,7 @@ export const PortfolioCompositionChart: FC = () => {
       <ComposedChart
         layout="vertical"
         data={chartData}
-        margin={{ left: 0, right: 0, top: 0, bottom: 0 }}
+        margin={{ left: 0, right: 0 }}
       >
         <XAxis type="number" hide />
         <YAxis type="category" hide />
