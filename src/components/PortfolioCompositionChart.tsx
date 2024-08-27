@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/chart";
 import { useInvestmentStore } from "@/store/investmentStore";
 import type { FC } from "react";
-import { Bar, ComposedChart, XAxis, YAxis } from "recharts";
+import { Bar, ComposedChart, LabelList, XAxis, YAxis } from "recharts";
 import { Percent } from "./Percent";
 
 const chartConfig = {
@@ -66,13 +66,17 @@ export const PortfolioCompositionChart: FC = () => {
           stackId="a"
           fill="var(--color-bonds)"
           radius={[4, 0, 0, 4]}
-        />
+        >
+          <LabelList className="fill-background" formatter={() => "Bonds"} />
+        </Bar>
         <Bar
           dataKey="stocks"
           stackId="a"
           fill="var(--color-stocks)"
           radius={[0, 4, 4, 0]}
-        />
+        >
+          <LabelList className="fill-background" formatter={() => "Stocks"} />
+        </Bar>
       </ComposedChart>
     </ChartContainer>
   );

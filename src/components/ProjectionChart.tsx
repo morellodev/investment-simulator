@@ -14,7 +14,7 @@ import {
 
 const chartConfig = {
   value: {
-    color: "hsl(var(--accent-foreground))",
+    color: "hsl(var(--chart-5))",
   },
 } satisfies ChartConfig;
 
