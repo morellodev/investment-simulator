@@ -1,13 +1,13 @@
-import { useInvestmentStore } from "@/store/investmentStore";
+import { usePortfolio } from "@/store/investmentStore";
 import type { FC } from "react";
 import { Percent } from "./Percent";
 
 export const ReturnRate: FC = () => {
-  const interestRate = useInvestmentStore((state) => state.interestRate);
+  const { yoyReturn } = usePortfolio();
 
   return (
     <>
-      <Percent value={interestRate} /> estimated return
+      <Percent value={yoyReturn} /> estimated return
     </>
   );
 };

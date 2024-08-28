@@ -9,22 +9,22 @@ import { Label } from "./ui/label";
 export const PortfolioComposer: FC = () => {
   const descriptionId = useId();
 
-  const interestRate = useInvestmentStore((state) => state.interestRate);
-  const setInterestRate = useInvestmentStore((state) => state.setInterestRate);
+  const portfolioId = useInvestmentStore((state) => state.portfolioId);
+  const setPortfolioId = useInvestmentStore((state) => state.setPortfolioId);
 
   return (
     <fieldset className="space-y-2">
-      <Label asChild={true}>
+      <Label asChild>
         <legend className="leading-normal">Select Portfolio</legend>
       </Label>
       <RadioGroupPrimitive.Root
         aria-describedby={descriptionId}
         className="flex flex-col flex-wrap gap-4 md:flex-row"
-        value={String(interestRate)}
-        onValueChange={(value) => setInterestRate(Number(value))}
+        value={portfolioId}
+        onValueChange={setPortfolioId}
       >
-        {portfolios.map(([label, rate]) => (
-          <PortfolioItem key={rate} label={label} value={String(rate)} />
+        {portfolios.map(({ id, name }) => (
+          <PortfolioItem key={id} label={name} value={id} />
         ))}
       </RadioGroupPrimitive.Root>
       <p id={descriptionId} className="text-xs text-muted-foreground">
