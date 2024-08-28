@@ -13,7 +13,7 @@ export const PortfolioPreview: FC = () => {
 
   return (
     <Card className="px-4 py-3 shadow-inner">
-      <div className="h-14">
+      <div className="h-12">
         <Suspense
           fallback={
             <div className="relative size-full">
@@ -24,7 +24,7 @@ export const PortfolioPreview: FC = () => {
           <PortfolioCompositionChartLazy />
         </Suspense>
       </div>
-      <p className="text-xs text-muted-foreground mt-0.5">{description}</p>
+      <p className="mt-2 text-xs text-muted-foreground">{description}</p>
     </Card>
   );
 };
