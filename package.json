@@ -37,7 +37,7 @@
     "@types/react-dom": "npm:types-react-dom@rc",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
-    "babel-plugin-react-compiler": "0.0.0-experimental-9e9694c-20240826",
+    "babel-plugin-react-compiler": "0.0.0-experimental-9e9694c-20240827",
     "lefthook": "^1.7.11",
     "postcss": "^8.4.40",
     "tailwindcss": "^3.4.7",
