@@ -11,7 +11,7 @@ export const PortfolioPreview: FC = () => {
 
   return (
     <Card className="px-4 pt-4 pb-3 shadow-inner">
-      <div className="h-12">
+      <div className="h-10 md:h-12">
         <Suspense
           fallback={<div className="border border-dashed rounded size-full" />}
         >

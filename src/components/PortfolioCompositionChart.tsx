@@ -24,9 +24,10 @@ export const PortfolioCompositionChart: FC = () => {
     <ChartContainer config={chartConfig} className="size-full">
       {/* @ts-expect-error Type incompatibility between recharts and React 19 */}
       <ComposedChart
-        layout="vertical"
+        barCategoryGap={0}
         data={chartData}
-        margin={{ left: 0, right: 0, top: -6, bottom: -6 }}
+        layout="vertical"
+        margin={{ left: 0, right: 0 }}
       >
         <XAxis type="number" hide />
         <YAxis type="category" hide />
