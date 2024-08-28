@@ -9,7 +9,7 @@ export type Portfolio = {
   };
 };
 
-export const portfolios: ReadonlyArray<Portfolio> = [
+export const portfolios = [
   {
     id: "conservative",
     name: "Conservative",
@@ -41,4 +41,4 @@ export const portfolios: ReadonlyArray<Portfolio> = [
       bonds: 0.2,
     },
   },
-];
+] as const satisfies ReadonlyArray<Portfolio>;

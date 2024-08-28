@@ -1,7 +1,7 @@
 "use client";
 
 import { type ChartConfig, ChartContainer } from "@/components/ui/chart";
-import { useInvestmentStore } from "@/store/investmentStore";
+import { usePortfolio } from "@/store/investmentStore";
 import type { FC } from "react";
 import { Bar, ComposedChart, LabelList, XAxis, YAxis } from "recharts";
 
@@ -17,9 +17,9 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export const PortfolioCompositionChart: FC = () => {
-  const chartData = useInvestmentStore((state) => [
-    state.portfolio.composition,
-  ]);
+  const portfolio = usePortfolio();
+
+  const chartData = [portfolio.composition];
 
   return (
     <ChartContainer config={chartConfig} className="size-full">

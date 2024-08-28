@@ -1,4 +1,4 @@
-import { useInvestmentStore } from "@/store/investmentStore";
+import { usePortfolio } from "@/store/investmentStore";
 import { type FC, Suspense, lazy } from "react";
 import { Card } from "./ui/card";
 
@@ -7,19 +7,13 @@ const PortfolioCompositionChartLazy = lazy(
 );
 
 export const PortfolioPreview: FC = () => {
-  const description = useInvestmentStore(
-    ({ portfolio }) => portfolio.description,
-  );
+  const { description } = usePortfolio();
 
   return (
-    <Card className="px-4 py-3 shadow-inner">
+    <Card className="px-4 pt-4 pb-3 shadow-inner">
       <div className="h-12">
         <Suspense
-          fallback={
-            <div className="relative size-full">
-              <div className="absolute inset-x-0 rounded inset-y-1.5 border border-dashed" />
-            </div>
-          }
+          fallback={<div className="border border-dashed rounded size-full" />}
         >
           <PortfolioCompositionChartLazy />
         </Suspense>
