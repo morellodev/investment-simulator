@@ -18,7 +18,6 @@ const chartConfig = {
 
 export const PortfolioCompositionChart: FC = () => {
   const portfolio = usePortfolio();
-
   const chartData = [portfolio.composition];
 
   return (
