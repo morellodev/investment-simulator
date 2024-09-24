@@ -24,8 +24,9 @@ const InitialInvestmentField: FC = () => {
   );
 
   return (
-    <div role="group" className="space-y-4">
-      <div className="space-y-2">
+    <fieldset>
+      <legend className="sr-only">Set initial investment</legend>
+      <div className="mb-4 space-y-2">
         <Label htmlFor={id}>
           Initial Investment (<CurrencySymbol currency={currency} />)
         </Label>
@@ -48,7 +49,7 @@ const InitialInvestmentField: FC = () => {
         value={[initialInvestment]}
         onValueChange={([v]) => setInitialInvestment(v)}
       />
-    </div>
+    </fieldset>
   );
 };
 
@@ -65,8 +66,9 @@ const MonthlyContributionField: FC = () => {
   );
 
   return (
-    <div role="group" className="space-y-4">
-      <div className="space-y-2">
+    <fieldset>
+      <legend className="sr-only">Set monthly contribution</legend>
+      <div className="mb-4 space-y-2">
         <Label htmlFor={id}>
           Monthly Contribution (<CurrencySymbol currency={currency} />)
         </Label>
@@ -89,7 +91,7 @@ const MonthlyContributionField: FC = () => {
         value={[monthlyContribution]}
         onValueChange={([v]) => setMonthlyContribution(v)}
       />
-    </div>
+    </fieldset>
   );
 };
 
@@ -100,8 +102,9 @@ const TimeHorizonField: FC = () => {
   const setYears = useInvestmentStore((state) => state.setYears);
 
   return (
-    <div role="group" className="space-y-4">
-      <div className="space-y-2">
+    <fieldset>
+      <legend className="sr-only">Set time horizon</legend>
+      <div className="mb-4 space-y-2">
         <Label htmlFor={id}>Time Horizon (years)</Label>
         <Input
           id={id}
@@ -121,7 +124,7 @@ const TimeHorizonField: FC = () => {
         value={[years]}
         onValueChange={([v]) => setYears(v)}
       />
-    </div>
+    </fieldset>
   );
 };
 
