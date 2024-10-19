@@ -7,8 +7,8 @@ import {
   calculateReturnValue,
   calculateTotalInvested,
 } from "@/utils/finance";
-import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { createWithEqualityFn as create } from "zustand/traditional";
 
 type State = {
   currency: Currency;

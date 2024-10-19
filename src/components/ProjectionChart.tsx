@@ -36,7 +36,6 @@ export const ProjectionChart: FC = () => {
     </div>
   ) : (
     <ChartContainer config={chartConfig} className="size-full">
-      {/* @ts-expect-error Type incompatibility between recharts and React 19 */}
       <BarChart data={data} margin={{ left: 0, right: 0 }}>
         <XAxis dataKey="year" tickLine={false} axisLine={false} />
         <YAxis

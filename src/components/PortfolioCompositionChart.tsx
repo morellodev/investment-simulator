@@ -22,7 +22,6 @@ export const PortfolioCompositionChart: FC = () => {
 
   return (
     <ChartContainer config={chartConfig} className="size-full">
-      {/* @ts-expect-error Type incompatibility between recharts and React 19 */}
       <ComposedChart
         barCategoryGap={0}
         data={chartData}
