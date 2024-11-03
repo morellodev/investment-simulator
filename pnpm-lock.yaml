@@ -14,11 +14,8 @@ importers:
   .:
     dependencies:
       '@hookform/resolvers':
-        specifier: ^3.9.0
-        version: 3.9.0(react-hook-form@7.53.1(react@19.0.0-rc-b8ae38f8-20241018))
-      '@radix-ui/react-icons':
-        specifier: ^1.3.0
-        version: 1.3.0(react@19.0.0-rc-b8ae38f8-20241018)
+        specifier: ^3.9.1
+        version: 3.9.1(react-hook-form@7.53.1(react@19.0.0-rc-b8ae38f8-20241018))
       '@radix-ui/react-label':
         specifier: ^2.1.0
         version: 2.1.0(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1)
@@ -41,8 +38,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       lucide-react:
-        specifier: ^0.453.0
-        version: 0.453.0(react@19.0.0-rc-b8ae38f8-20241018)
+        specifier: ^0.454.0
+        version: 0.454.0(react@19.0.0-rc-b8ae38f8-20241018)
       react:
         specifier: 19.0.0-rc-b8ae38f8-20241018
         version: 19.0.0-rc-b8ae38f8-20241018
@@ -53,8 +50,8 @@ importers:
         specifier: ^7.53.1
         version: 7.53.1(react@19.0.0-rc-b8ae38f8-20241018)
       recharts:
-        specifier: 2.13.0
-        version: 2.13.0(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)
+        specifier: 2.13.3
+        version: 2.13.3(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)
       tailwind-merge:
         specifier: ^2.5.4
         version: 2.5.4
@@ -65,8 +62,8 @@ importers:
         specifier: ^3.23.8
         version: 3.23.8
       zustand:
-        specifier: ^5.0.0
-        version: 5.0.0(react@19.0.0-rc-b8ae38f8-20241018)(types-react@19.0.0-rc.1)(use-sync-external-store@1.2.2(react@19.0.0-rc-b8ae38f8-20241018))
+        specifier: ^5.0.1
+        version: 5.0.1(react@19.0.0-rc-b8ae38f8-20241018)(types-react@19.0.0-rc.1)(use-sync-external-store@1.2.2(react@19.0.0-rc-b8ae38f8-20241018))
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -90,8 +87,8 @@ importers:
         specifier: 19.0.0-beta-8a03594-20241020
         version: 19.0.0-beta-8a03594-20241020
       lefthook:
-        specifier: ^1.8.1
-        version: 1.8.1
+        specifier: ^1.8.2
+        version: 1.8.2
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
@@ -207,8 +204,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/runtime@7.25.7':
-    resolution: {integrity: sha512-FjoyLe754PMiYsFaN5C94ttGiOmBNYTf6pLr4xXHAT5uctHb092PBszndLDR5XA/jghQvn4n7JMHl7dmTgbm9w==}
+  '@babel/runtime@7.26.0':
+    resolution: {integrity: sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.25.9':
@@ -418,8 +415,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@hookform/resolvers@3.9.0':
-    resolution: {integrity: sha512-bU0Gr4EepJ/EQsH/IwEzYLsT/PEj5C0ynLQ4m+GSHS+xKH4TfSelhluTgOaoc4kA5s7eCsQbM4wvZLzELmWzUg==}
+  '@hookform/resolvers@3.9.1':
+    resolution: {integrity: sha512-ud2HqmGBM0P0IABqoskKWI6PEf6ZDDBZkFqe2Vnl+mTHCEHzr3ISjjZyCwTjC/qpL25JC9aIDkloQejvMeq0ug==}
     peerDependencies:
       react-hook-form: ^7.0.0
 
@@ -522,11 +519,6 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
-
-  '@radix-ui/react-icons@1.3.0':
-    resolution: {integrity: sha512-jQxj/0LKgp+j9BiTXz3O3sgs26RNet2iLWmsPyRz2SIcR4q/4SbazXfnYwbAr+vLYKSfc7qxzyGQA1HLlYiuNw==}
-    peerDependencies:
-      react: ^16.x || ^17.x || ^18.x
 
   '@radix-ui/react-id@1.1.0':
     resolution: {integrity: sha512-EJUrI8yYh7WOjNOqpoJaf1jlFIH2LvtgAl+YcFqNCa+4hj64ZXmPkAKOFs/ukjz3byN6bdb/AVUqHkI8/uWWMA==}
@@ -828,8 +820,8 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
 
-  acorn@8.13.0:
-    resolution: {integrity: sha512-8zSiw54Oxrdym50NlZ9sUusyO1Z1ZchgRLWRaK6c86XJFClyCgFKetdowBg5bKxyp/u+CDBJG4Mpp0m3HLZl9w==}
+  acorn@8.14.0:
+    resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -1205,58 +1197,58 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  lefthook-darwin-arm64@1.8.1:
-    resolution: {integrity: sha512-zTUb0NcMWKDqck9UobqJZCzihksk5Dv/D+zD3jrxi50vQvgl4wfTO3sP78WmVdhGkMCyHy5udOB+L72fyJqcdw==}
+  lefthook-darwin-arm64@1.8.2:
+    resolution: {integrity: sha512-g41SoFUv8SzHpG1NOPkHUEPhC1tJM5FF3Vo+HESmLmL9cDfd7JncHFPy59rVnC9Q8nOS0rvoik5HTq+3/wcfww==}
     cpu: [arm64]
     os: [darwin]
 
-  lefthook-darwin-x64@1.8.1:
-    resolution: {integrity: sha512-f9DY+UBd+g6TZ/nHdNZnfGeWT/0n18bkYi56biKEBXIgRlnuTNCrk0TUiSxlWF2GUQdxHM8YSWDkPRtHLg+3zg==}
+  lefthook-darwin-x64@1.8.2:
+    resolution: {integrity: sha512-IlCm4PrA/aAZ1MChiExYTbladC87GaxmYHOMHCeChLecqn+lypAuiYLgf7w5r2s3MjH5rbXImfU925NRKi6RXQ==}
     cpu: [x64]
     os: [darwin]
 
-  lefthook-freebsd-arm64@1.8.1:
-    resolution: {integrity: sha512-ZWx0PtYRtd0tlygUjLKP1eSztyLx2pOnI06h5/PyxWcmF+1/WjYPZM7Mt1nBwpqZcFNYkQ3VefFfg1f0URuLJQ==}
+  lefthook-freebsd-arm64@1.8.2:
+    resolution: {integrity: sha512-f7AIvuIEXUUR1ZutIFxjYKFDAVUBrdsLm+cbwOCjdfpJh7j2Fjg6nKXbDcglPXlX9Ix+nw9pHbJE2DAgzkI1Vw==}
     cpu: [arm64]
     os: [freebsd]
 
-  lefthook-freebsd-x64@1.8.1:
-    resolution: {integrity: sha512-F5rd7JMwQJosZclsyqJciAn5CBZCZGTGEXLWEwOhgFZbbsUubGSekAhJNoHFm4eJZaDhhWnckghCjXCfBjDSYg==}
+  lefthook-freebsd-x64@1.8.2:
+    resolution: {integrity: sha512-DSDL64fRLSNSWOa1y2bGXwXPiwU1fbAXpj63j6jeQ0jkgu6k+3XL/PBXKh80cI6MvCKz/KQKCtIencXZZ2Ua4Q==}
     cpu: [x64]
     os: [freebsd]
 
-  lefthook-linux-arm64@1.8.1:
-    resolution: {integrity: sha512-CTsqVHW2B291wLXonod1AMUJEOZqtG8lY+la97Id301kY4TzgbBKQvU2LF/hBIS8c62DjPMzEM4NYfbVzrK1QA==}
+  lefthook-linux-arm64@1.8.2:
+    resolution: {integrity: sha512-sJ95X+ZH8ayIE7ApiGEq5ZF9KGA+eKiocJU+536bLbAIHw5WjGmv2x3llFqUxH/zAmLe3k542oZ4d84wEO0EGQ==}
     cpu: [arm64]
     os: [linux]
 
-  lefthook-linux-x64@1.8.1:
-    resolution: {integrity: sha512-fw8WwUjr+mCfH/Gbmfj/7J0oX8NjfaACUQlYr3kVHz3c+LYMoRv7O/7dn2OXVO5vEdK5zH/NZlMml4C4qhxwEA==}
+  lefthook-linux-x64@1.8.2:
+    resolution: {integrity: sha512-2eirc61M0WjlbSHamAgGf9iWsQTYz4IT6PAPm66vUaeG34+5D66xFicIV6pK2niRGUOPtNs8Kt4lboKtW+ba5g==}
     cpu: [x64]
     os: [linux]
 
-  lefthook-openbsd-arm64@1.8.1:
-    resolution: {integrity: sha512-Za9K1ZAoRRM2Pq0eXZHbUppUZArZfgVcTDawKf/FRkbvAsTnBPEcH8Qtjcsm12qLQZ45KtPzZ/GEl/nxnWpeVQ==}
+  lefthook-openbsd-arm64@1.8.2:
+    resolution: {integrity: sha512-ZMop7htaSwP3MiL06WHUV36EX05N33o0WzNzC8NO5KEubn8Z74vbXcaq6qYezmgi+erkG6dtTnlbcZy5PFvFIA==}
     cpu: [arm64]
     os: [openbsd]
 
-  lefthook-openbsd-x64@1.8.1:
-    resolution: {integrity: sha512-NgzcIouZobNZw1eEIC3Vh3z4bzVgIGIyJ41g5PGe6d1IXVkmnc5qpFP7jgnaaLK7TPahzIOREQrtYgR62Hg5bw==}
+  lefthook-openbsd-x64@1.8.2:
+    resolution: {integrity: sha512-jXFoxmpYXO6ZafgQJVvk3MYlRgOBJD3n7H8A1Bj1E2yrLzOhKevUKlTNwZTxQdxlnvoo33yD6SjVSujZavEGpw==}
     cpu: [x64]
     os: [openbsd]
 
-  lefthook-windows-arm64@1.8.1:
-    resolution: {integrity: sha512-NUIwnV56YLUmHZf+C5gQA9tIdWjdHu5Ql6hNdFbYYrGxNvNFh2juHRaPKHUGjYk5iu9bxgjogw7mHfN+LanBcQ==}
+  lefthook-windows-arm64@1.8.2:
+    resolution: {integrity: sha512-hsQUSk6kmB8E0UMD3Mk6ROoa7qv6XmigfPsn9tFjmbZ2aO+kpBfWitZ5v+gcjNp44yaECs3YTMIfv3QFwXlRCw==}
     cpu: [arm64]
     os: [win32]
 
-  lefthook-windows-x64@1.8.1:
-    resolution: {integrity: sha512-9cnvWe8tYBwUxJFvW/TJ3P4Al+52QJcLdkJJ1aKgr3F7EydPPZk+jWFy0b1SSan1S7M7OuoPC9jcKS3PGjB6tw==}
+  lefthook-windows-x64@1.8.2:
+    resolution: {integrity: sha512-YypbMhvgAtkL7y+O3OlF81vwua7X4jloBz5hO3fILAuzaGAiPE1VbeuqRweV8VuKK4L/ZVVKqmpesygBUNDp9w==}
     cpu: [x64]
     os: [win32]
 
-  lefthook@1.8.1:
-    resolution: {integrity: sha512-DTm2F7kf+mQ0UgxSOuCSIwAMC4RJOH5x77okcsFfeJOJ0y7/xGgpfmPb9ZPBDXeJ6UxfI0ngRgWoEctYMlMr4A==}
+  lefthook@1.8.2:
+    resolution: {integrity: sha512-lMXbcFHNDr+gzy/7ghuJDVB/Yyycj+ZL/7pN3Gm/s5Xqrc9+5sj3IrDAPylcEJ1cKCbUnXbwESrhhqpcYv4d4g==}
     hasBin: true
 
   lilconfig@2.1.0:
@@ -1283,8 +1275,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-react@0.453.0:
-    resolution: {integrity: sha512-kL+RGZCcJi9BvJtzg2kshO192Ddy9hv3ij+cPrVPWSRzgCWCVazoQJxOjAwgK53NomL07HB7GPHW120FimjNhQ==}
+  lucide-react@0.454.0:
+    resolution: {integrity: sha512-hw7zMDwykCLnEzgncEEjHeA6+45aeEzRYuKHuyRSOPkhko+J3ySGjGIzu+mmMfDFG1vazHepMaYFYHbTFAZAAQ==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
@@ -1434,8 +1426,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
 
-  react-is@19.0.0-rc-45804af1-20241021:
-    resolution: {integrity: sha512-mpLHD6G7cziX6n3Y3uKdm9SKp7fuHuLMwB/+mfEXCcJu721LZwEfl3vZuJMo7daxKToL8em7DUCtoS7YuZkfOA==}
+  react-is@19.0.0-rc-7c8e5e7a-20241101:
+    resolution: {integrity: sha512-5MThWcQSkQZwg57Ea3InmZb2o5YVAwM28u3SrukOgfvy3HB8FgngW3kmfmazWezT5M+a2BgZAbTvfBXTHEGQSA==}
 
   react-refresh@0.14.2:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
@@ -1467,8 +1459,8 @@ packages:
   recharts-scale@0.4.5:
     resolution: {integrity: sha512-kivNFO+0OcUNu7jQquLXAxz1FIwZj8nrj+YkOKc5694NbjCvcT6aSZiIzNzd2Kul4o4rTto8QVR9lMNtxD4G1w==}
 
-  recharts@2.13.0:
-    resolution: {integrity: sha512-sbfxjWQ+oLWSZEWmvbq/DFVdeRLqqA6d0CDjKx2PkxVVdoXo16jvENCE+u/x7HxOO+/fwx//nYRwb8p8X6s/lQ==}
+  recharts@2.13.3:
+    resolution: {integrity: sha512-YDZ9dOfK9t3ycwxgKbrnDlRC4BHdjlY73fet3a0C1+qGMjXVZe6+VXmpOIIhzkje5MMEL8AN4hLIe4AMskBzlA==}
     engines: {node: '>=14'}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
@@ -1722,8 +1714,8 @@ packages:
   zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
 
-  zustand@5.0.0:
-    resolution: {integrity: sha512-LE+VcmbartOPM+auOjCCLQOsQ05zUTp8RkgwRzefUk+2jISdMMFnxvyTjA4YNWr5ZGXYbVsEMZosttuxUBkojQ==}
+  zustand@5.0.1:
+    resolution: {integrity: sha512-pRET7Lao2z+n5R/HduXMio35TncTlSW68WsYBq2Lg1ASspsNGjpwLAsij3RpouyV6+kHMwwwzP0bZPD70/Jx/w==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': npm:types-react@rc
@@ -1861,7 +1853,7 @@ snapshots:
       '@babel/core': 7.25.9
       '@babel/helper-plugin-utils': 7.25.9
 
-  '@babel/runtime@7.25.7':
+  '@babel/runtime@7.26.0':
     dependencies:
       regenerator-runtime: 0.14.1
 
@@ -1998,7 +1990,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@hookform/resolvers@3.9.0(react-hook-form@7.53.1(react@19.0.0-rc-b8ae38f8-20241018))':
+  '@hookform/resolvers@3.9.1(react-hook-form@7.53.1(react@19.0.0-rc-b8ae38f8-20241018))':
     dependencies:
       react-hook-form: 7.53.1(react@19.0.0-rc-b8ae38f8-20241018)
 
@@ -2094,10 +2086,6 @@ snapshots:
       react: 19.0.0-rc-b8ae38f8-20241018
     optionalDependencies:
       '@types/react': types-react@19.0.0-rc.1
-
-  '@radix-ui/react-icons@1.3.0(react@19.0.0-rc-b8ae38f8-20241018)':
-    dependencies:
-      react: 19.0.0-rc-b8ae38f8-20241018
 
   '@radix-ui/react-id@1.1.0(react@19.0.0-rc-b8ae38f8-20241018)(types-react@19.0.0-rc.1)':
     dependencies:
@@ -2363,7 +2351,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  acorn@8.13.0:
+  acorn@8.14.0:
     optional: true
 
   ansi-regex@4.1.1: {}
@@ -2560,7 +2548,7 @@ snapshots:
 
   dom-helpers@5.2.1:
     dependencies:
-      '@babel/runtime': 7.25.7
+      '@babel/runtime': 7.26.0
       csstype: 3.1.3
 
   eastasianwidth@0.2.0: {}
@@ -2710,48 +2698,48 @@ snapshots:
 
   json5@2.2.3: {}
 
-  lefthook-darwin-arm64@1.8.1:
+  lefthook-darwin-arm64@1.8.2:
     optional: true
 
-  lefthook-darwin-x64@1.8.1:
+  lefthook-darwin-x64@1.8.2:
     optional: true
 
-  lefthook-freebsd-arm64@1.8.1:
+  lefthook-freebsd-arm64@1.8.2:
     optional: true
 
-  lefthook-freebsd-x64@1.8.1:
+  lefthook-freebsd-x64@1.8.2:
     optional: true
 
-  lefthook-linux-arm64@1.8.1:
+  lefthook-linux-arm64@1.8.2:
     optional: true
 
-  lefthook-linux-x64@1.8.1:
+  lefthook-linux-x64@1.8.2:
     optional: true
 
-  lefthook-openbsd-arm64@1.8.1:
+  lefthook-openbsd-arm64@1.8.2:
     optional: true
 
-  lefthook-openbsd-x64@1.8.1:
+  lefthook-openbsd-x64@1.8.2:
     optional: true
 
-  lefthook-windows-arm64@1.8.1:
+  lefthook-windows-arm64@1.8.2:
     optional: true
 
-  lefthook-windows-x64@1.8.1:
+  lefthook-windows-x64@1.8.2:
     optional: true
 
-  lefthook@1.8.1:
+  lefthook@1.8.2:
     optionalDependencies:
-      lefthook-darwin-arm64: 1.8.1
-      lefthook-darwin-x64: 1.8.1
-      lefthook-freebsd-arm64: 1.8.1
-      lefthook-freebsd-x64: 1.8.1
-      lefthook-linux-arm64: 1.8.1
-      lefthook-linux-x64: 1.8.1
-      lefthook-openbsd-arm64: 1.8.1
-      lefthook-openbsd-x64: 1.8.1
-      lefthook-windows-arm64: 1.8.1
-      lefthook-windows-x64: 1.8.1
+      lefthook-darwin-arm64: 1.8.2
+      lefthook-darwin-x64: 1.8.2
+      lefthook-freebsd-arm64: 1.8.2
+      lefthook-freebsd-x64: 1.8.2
+      lefthook-linux-arm64: 1.8.2
+      lefthook-linux-x64: 1.8.2
+      lefthook-openbsd-arm64: 1.8.2
+      lefthook-openbsd-x64: 1.8.2
+      lefthook-windows-arm64: 1.8.2
+      lefthook-windows-x64: 1.8.2
 
   lilconfig@2.1.0: {}
 
@@ -2771,7 +2759,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@0.453.0(react@19.0.0-rc-b8ae38f8-20241018):
+  lucide-react@0.454.0(react@19.0.0-rc-b8ae38f8-20241018):
     dependencies:
       react: 19.0.0-rc-b8ae38f8-20241018
 
@@ -2875,13 +2863,13 @@ snapshots:
       '@jest/types': 24.9.0
       ansi-regex: 4.1.1
       ansi-styles: 3.2.1
-      react-is: 19.0.0-rc-45804af1-20241021
+      react-is: 19.0.0-rc-7c8e5e7a-20241101
 
   prop-types@15.8.1:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      react-is: 19.0.0-rc-45804af1-20241021
+      react-is: 19.0.0-rc-7c8e5e7a-20241101
 
   queue-microtask@1.2.3: {}
 
@@ -2894,7 +2882,7 @@ snapshots:
     dependencies:
       react: 19.0.0-rc-b8ae38f8-20241018
 
-  react-is@19.0.0-rc-45804af1-20241021: {}
+  react-is@19.0.0-rc-7c8e5e7a-20241101: {}
 
   react-refresh@0.14.2: {}
 
@@ -2908,7 +2896,7 @@ snapshots:
 
   react-transition-group@4.4.5(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018):
     dependencies:
-      '@babel/runtime': 7.25.7
+      '@babel/runtime': 7.26.0
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
@@ -2929,14 +2917,14 @@ snapshots:
     dependencies:
       decimal.js-light: 2.5.1
 
-  recharts@2.13.0(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018):
+  recharts@2.13.3(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018):
     dependencies:
       clsx: 2.1.1
       eventemitter3: 4.0.7
       lodash: 4.17.21
       react: 19.0.0-rc-b8ae38f8-20241018
       react-dom: 19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018)
-      react-is: 19.0.0-rc-45804af1-20241021
+      react-is: 19.0.0-rc-7c8e5e7a-20241101
       react-smooth: 4.0.1(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)
       recharts-scale: 0.4.5
       tiny-invariant: 1.3.3
@@ -3079,7 +3067,7 @@ snapshots:
   terser@5.33.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.13.0
+      acorn: 8.14.0
       commander: 2.20.3
       source-map-support: 0.5.21
     optional: true
@@ -3205,7 +3193,7 @@ snapshots:
 
   zod@3.23.8: {}
 
-  zustand@5.0.0(react@19.0.0-rc-b8ae38f8-20241018)(types-react@19.0.0-rc.1)(use-sync-external-store@1.2.2(react@19.0.0-rc-b8ae38f8-20241018)):
+  zustand@5.0.1(react@19.0.0-rc-b8ae38f8-20241018)(types-react@19.0.0-rc.1)(use-sync-external-store@1.2.2(react@19.0.0-rc-b8ae38f8-20241018)):
     optionalDependencies:
       '@types/react': types-react@19.0.0-rc.1
       react: 19.0.0-rc-b8ae38f8-20241018
