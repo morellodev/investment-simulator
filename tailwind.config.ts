@@ -1,3 +1,4 @@
+import cq from "@tailwindcss/container-queries";
 import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
 
@@ -94,5 +95,5 @@ export default {
       },
     },
   },
-  plugins: [animate],
+  plugins: [animate, cq],
 } satisfies Config;

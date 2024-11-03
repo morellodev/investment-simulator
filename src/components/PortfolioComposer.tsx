@@ -13,13 +13,13 @@ export const PortfolioComposer: FC = () => {
   const setPortfolioId = useInvestmentStore((state) => state.setPortfolioId);
 
   return (
-    <fieldset className="space-y-2">
+    <fieldset className="space-y-2 @container">
       <Label asChild>
         <legend className="leading-normal">Select Portfolio</legend>
       </Label>
       <RadioGroupPrimitive.Root
         aria-describedby={descriptionId}
-        className="flex flex-col flex-wrap gap-4 md:flex-row"
+        className="flex flex-col gap-4 @md:flex-row"
         value={portfolioId}
         onValueChange={setPortfolioId}
       >
@@ -41,7 +41,7 @@ const PortfolioItem: FC<{ label: string; value: string }> = ({
   const id = useId();
 
   return (
-    <div className="relative inline-flex items-center justify-between gap-4 px-4 py-3 transition-shadow border rounded-md outline-none select-none bg-background text-foreground ring-offset-background has-[[aria-checked=true]]:bg-primary has-[[aria-checked=true]]:border-transparent has-[[aria-checked=true]]:text-primary-foreground has-[:focus]:ring-2 has-[:focus]:ring-offset-2 has-[:focus]:ring-ring">
+    <div className="relative flex-1 inline-flex items-center justify-between gap-2 px-4 py-3 transition-shadow border rounded-md outline-none select-none bg-background text-foreground ring-offset-background has-[[aria-checked=true]]:bg-primary has-[[aria-checked=true]]:border-transparent has-[[aria-checked=true]]:text-primary-foreground has-[:focus]:ring-2 has-[:focus]:ring-offset-2 has-[:focus]:ring-ring">
       <label htmlFor={id}>{label}</label>
       <RadioGroupPrimitive.Item
         id={id}
