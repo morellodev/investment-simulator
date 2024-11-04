@@ -108,8 +108,8 @@ importers:
         specifier: ^0.7.1
         version: 0.7.1
       vite-tsconfig-paths:
-        specifier: ^5.0.1
-        version: 5.0.1(typescript@5.6.3)(vite@5.4.10(@types/node@20.14.12)(terser@5.33.0))
+        specifier: ^5.1.0
+        version: 5.1.0(typescript@5.6.3)(vite@5.4.10(@types/node@20.14.12)(terser@5.33.0))
 
 packages:
 
@@ -1016,15 +1016,6 @@ packages:
     resolution: {integrity: sha512-ndfJ/JxxMd3nw31uyKoY2naivF+r29V+Lc0svZxe1JvvIRmi8hUsrMvdOwgS1o6uBHmiz91geQ0ylPP0aj1VUA==}
     engines: {node: '>=12'}
 
-  debug@4.3.6:
-    resolution: {integrity: sha512-O/09Bd4Z1fBrU4VzkhFqVgpPzaGbw6Sm9FEkBT1A/YBXQFGuuSxa1dN2nxgxS34JmKXqYx8CZAwEVoJFImUXIg==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
   debug@4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
     engines: {node: '>=6.0'}
@@ -1304,9 +1295,6 @@ packages:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  ms@2.1.2:
-    resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -1434,8 +1422,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
 
-  react-is@19.0.0-rc-7c8e5e7a-20241101:
-    resolution: {integrity: sha512-5MThWcQSkQZwg57Ea3InmZb2o5YVAwM28u3SrukOgfvy3HB8FgngW3kmfmazWezT5M+a2BgZAbTvfBXTHEGQSA==}
+  react-is@19.0.0-rc-4d577fd2-20241104:
+    resolution: {integrity: sha512-U52Z3ZQsfvw6cIbCUt+JAPn73TL+4hN4X5D9JvQ3M+M3nlibKXL1SwC90yD23TI2gsZghM+OFXW561pMpS+6yg==}
 
   react-refresh@0.14.2:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
@@ -1603,8 +1591,8 @@ packages:
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  tsconfck@3.1.1:
-    resolution: {integrity: sha512-00eoI6WY57SvZEVjm13stEVE90VkEdJAFGgpFLTsZbJyW/LwFQ7uQxJHWpZ2hzSWgCPKc9AnBnNP+0X7o3hAmQ==}
+  tsconfck@3.1.4:
+    resolution: {integrity: sha512-kdqWFGVJqe+KGYvlSO9NIaWn9jT1Ny4oKVzAJsKii5eoE9snzTJzL4+MMVOMn+fikWGFmKEylcXL710V/kIPJQ==}
     engines: {node: ^18 || >=20}
     hasBin: true
     peerDependencies:
@@ -1653,8 +1641,8 @@ packages:
   vite-plugin-sitemap@0.7.1:
     resolution: {integrity: sha512-4NRTkiWytLuAmcikckrLcLl9iYA20+5v6l8XshcOrzxH1WR8H0O3S6sTQYfjMrE8su/LG6Y0cTodvOdcOIxaLw==}
 
-  vite-tsconfig-paths@5.0.1:
-    resolution: {integrity: sha512-yqwv+LstU7NwPeNqajZzLEBVpUFU6Dugtb2P84FXuvaoYA+/70l9MHE+GYfYAycVyPSDYZ7mjOFuYBRqlEpTig==}
+  vite-tsconfig-paths@5.1.0:
+    resolution: {integrity: sha512-Y1PLGHCJfAq1Zf4YIGEsmuU/NCX1epoZx9zwSr32Gjn3aalwQHRKr5aUmbo6r0JHeHkqmWpmDg7WOynhYXw1og==}
     peerDependencies:
       vite: '*'
     peerDependenciesMeta:
@@ -2544,10 +2532,6 @@ snapshots:
 
   d3-timer@3.0.1: {}
 
-  debug@4.3.6:
-    dependencies:
-      ms: 2.1.2
-
   debug@4.3.7:
     dependencies:
       ms: 2.1.3
@@ -2788,8 +2772,6 @@ snapshots:
 
   minipass@7.1.2: {}
 
-  ms@2.1.2: {}
-
   ms@2.1.3: {}
 
   mz@2.7.0:
@@ -2875,13 +2857,13 @@ snapshots:
       '@jest/types': 24.9.0
       ansi-regex: 4.1.1
       ansi-styles: 3.2.1
-      react-is: 19.0.0-rc-7c8e5e7a-20241101
+      react-is: 19.0.0-rc-4d577fd2-20241104
 
   prop-types@15.8.1:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      react-is: 19.0.0-rc-7c8e5e7a-20241101
+      react-is: 19.0.0-rc-4d577fd2-20241104
 
   queue-microtask@1.2.3: {}
 
@@ -2894,7 +2876,7 @@ snapshots:
     dependencies:
       react: 19.0.0-rc-b8ae38f8-20241018
 
-  react-is@19.0.0-rc-7c8e5e7a-20241101: {}
+  react-is@19.0.0-rc-4d577fd2-20241104: {}
 
   react-refresh@0.14.2: {}
 
@@ -2936,7 +2918,7 @@ snapshots:
       lodash: 4.17.21
       react: 19.0.0-rc-b8ae38f8-20241018
       react-dom: 19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018)
-      react-is: 19.0.0-rc-7c8e5e7a-20241101
+      react-is: 19.0.0-rc-4d577fd2-20241104
       react-smooth: 4.0.1(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)
       recharts-scale: 0.4.5
       tiny-invariant: 1.3.3
@@ -3104,7 +3086,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsconfck@3.1.1(typescript@5.6.3):
+  tsconfck@3.1.4(typescript@5.6.3):
     optionalDependencies:
       typescript: 5.6.3
 
@@ -3158,11 +3140,11 @@ snapshots:
 
   vite-plugin-sitemap@0.7.1: {}
 
-  vite-tsconfig-paths@5.0.1(typescript@5.6.3)(vite@5.4.10(@types/node@20.14.12)(terser@5.33.0)):
+  vite-tsconfig-paths@5.1.0(typescript@5.6.3)(vite@5.4.10(@types/node@20.14.12)(terser@5.33.0)):
     dependencies:
-      debug: 4.3.6
+      debug: 4.3.7
       globrex: 0.1.2
-      tsconfck: 3.1.1(typescript@5.6.3)
+      tsconfck: 3.1.4(typescript@5.6.3)
     optionalDependencies:
       vite: 5.4.10(@types/node@20.14.12)(terser@5.33.0)
     transitivePeerDependencies:
