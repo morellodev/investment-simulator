@@ -14,7 +14,16 @@ export const Footer: FC = () => {
           >
             Dennis Morello
           </a>{" "}
-          for educational purposes only.
+          for educational purposes only. Source code available on{" "}
+          <a
+            href="https://github.com/morellodev/investment-simulator"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
+            GitHub
+          </a>
+          .
         </p>
       </div>
     </footer>
