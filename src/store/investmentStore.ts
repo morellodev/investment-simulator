@@ -15,7 +15,7 @@ type State = {
   locale: Locale;
   initialInvestment: number;
   monthlyContribution: number;
-  annualInflation: number;
+  annualInflationCent: number;
   years: number;
   portfolioId: (typeof portfolios)[number]["id"];
 };
@@ -27,6 +27,9 @@ type Actions = {
   setMonthlyContribution: (
     monthlyContribution: State["monthlyContribution"],
   ) => void;
+  setAnnualInflationCent: (
+    annualInflationCent: State["annualInflationCent"],
+  ) => void;
   setYears: (years: State["years"]) => void;
   setPortfolioId: (portfolio: State["portfolioId"]) => void;
 };
@@ -36,7 +39,7 @@ const initialState: State = {
   locale: "en-US",
   initialInvestment: 1000,
   monthlyContribution: 100,
-  annualInflation: 0.02,
+  annualInflationCent: 0,
   years: 10,
   portfolioId: "balanced",
 };
@@ -53,6 +56,8 @@ export const useInvestmentStore = create<InvestmentStore>()(
         setInitialInvestment: (initialInvestment) => set({ initialInvestment }),
         setMonthlyContribution: (monthlyContribution) =>
           set({ monthlyContribution }),
+        setAnnualInflationCent: (annualInflation) =>
+          set({ annualInflationCent: annualInflation }),
         setYears: (years) => set({ years }),
         setPortfolioId: (portfolioId) => set({ portfolioId }),
       };
@@ -76,7 +81,12 @@ export const useTotalInvested = () =>
 
 export const useFutureInvestmentValue = () =>
   useInvestmentStore(
-    ({ annualInflation, initialInvestment, monthlyContribution, years }) => {
+    ({
+      annualInflationCent,
+      initialInvestment,
+      monthlyContribution,
+      years,
+    }) => {
       const { annualReturn } = usePortfolio();
 
       return calculateFutureInvestmentValue({
@@ -84,7 +94,7 @@ export const useFutureInvestmentValue = () =>
         monthlyContribution,
         years,
         annualReturn,
-        annualInflation,
+        annualInflation: annualInflationCent / 100,
       });
     },
   );
@@ -99,7 +109,7 @@ export const useReturnValue = () =>
         initialInvestment: state.initialInvestment,
         monthlyContribution: state.monthlyContribution,
         years: state.years,
-        annualInflation: state.annualInflation,
+        annualInflation: state.annualInflationCent / 100,
         annualReturn,
       }),
     });
@@ -115,7 +125,7 @@ export const useRateOfReturn = () =>
         initialInvestment: state.initialInvestment,
         monthlyContribution: state.monthlyContribution,
         years: state.years,
-        annualInflation: state.annualInflation,
+        annualInflation: state.annualInflationCent / 100,
         annualReturn,
       }),
     });
@@ -130,7 +140,7 @@ export const useProjectionSeries = () =>
         years: i + 1,
         initialInvestment: state.initialInvestment,
         monthlyContribution: state.monthlyContribution,
-        annualInflation: state.annualInflation,
+        annualInflation: state.annualInflationCent / 100,
         annualReturn,
       }),
     );
