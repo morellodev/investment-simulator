@@ -28,22 +28,19 @@ export function calculateFutureInvestmentValue({
 }): number {
   const months = years * 12;
 
-  // Compute monthly return and inflation rates
-  const monthlyReturn = annualReturn / 12;
-  const monthlyInflation = (1 + annualInflation) ** (1 / 12) - 1;
+  // Compute real rate of return
+  const realAnnualReturn = (1 + annualReturn) / (1 + annualInflation) - 1;
+  const monthlyRealReturn = realAnnualReturn / 12;
 
-  // Initial value in real terms
-  let realValue = initialInvestment;
+  // Initial value
+  let value = initialInvestment;
 
+  // Compound monthly with real rate of return
   for (let month = 0; month < months; month++) {
-    // Compute nominal value at the end of the month
-    const nominalValue = realValue * (1 + monthlyReturn) + monthlyContribution;
-
-    // Compute real value at the end of the month
-    realValue = nominalValue / (1 + monthlyInflation);
+    value = value * (1 + monthlyRealReturn) + monthlyContribution;
   }
 
-  return realValue;
+  return value;
 }
 
 export function calculateReturnValue(args: {
