@@ -16,7 +16,7 @@ export const App: FC = () => {
     <div className="min-h-svh">
       <main className="py-6 md:py-10 lg:py-20">
         <div className="container">
-          <div className="flex justify-between gap-2">
+          <div className="flex items-end justify-between gap-2">
             <div className="lg:w-1/2">
               <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1] text-balance">
                 Simulate your investment return
