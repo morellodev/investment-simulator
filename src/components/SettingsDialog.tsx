@@ -1,8 +1,8 @@
 import { annualInflationRange } from "@/constants";
 import { useInvestmentStore } from "@/store/investmentStore";
-import { clamp } from "@/utils/math";
 import { Cog } from "lucide-react";
-import { type FC, useId } from "react";
+import type { FC } from "react";
+import { FormattedNumber } from "./FormattedNumber";
 import { Button } from "./ui/button";
 import {
   Dialog,
@@ -14,13 +14,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Slider } from "./ui/slider";
 
 export const SettingsDialog: FC = () => {
-  const idPrefix = useId();
-
   const annualInflationCent = useInvestmentStore(
     (state) => state.annualInflationCent,
   );
@@ -47,22 +44,13 @@ export const SettingsDialog: FC = () => {
           <fieldset>
             <legend className="sr-only">Set annual inflation rate</legend>
             <div className="mb-6 space-y-4">
-              <Label htmlFor={`${idPrefix}inflationRate`}>
-                Annual Inflation Rate (%)
-              </Label>
-              <Input
-                id={`${idPrefix}inflationRate`}
-                type="text"
-                inputMode="decimal"
-                value={annualInflationCent}
-                onChange={(e) => {
-                  const n = Number(e.target.value);
-                  if (Number.isNaN(n)) return;
-                  return setAnnualInflationCent(
-                    clamp(n, ...annualInflationRange),
-                  );
-                }}
-              />
+              <Label>Annual Inflation Rate</Label>
+              <div className="text-xl font-medium tabular-nums">
+                <FormattedNumber
+                  value={annualInflationCent / 100}
+                  style="percent"
+                />
+              </div>
             </div>
             <Slider
               min={annualInflationRange[0]}
