@@ -15,6 +15,7 @@ type State = {
   locale: Locale;
   initialInvestment: number;
   monthlyContribution: number;
+  annualInflation: number;
   years: number;
   portfolioId: (typeof portfolios)[number]["id"];
 };
@@ -35,6 +36,7 @@ const initialState: State = {
   locale: "en-US",
   initialInvestment: 1000,
   monthlyContribution: 100,
+  annualInflation: 0.02,
   years: 10,
   portfolioId: "balanced",
 };
@@ -73,20 +75,23 @@ export const useTotalInvested = () =>
   useInvestmentStore(calculateTotalInvested);
 
 export const useFutureInvestmentValue = () =>
-  useInvestmentStore(({ initialInvestment, monthlyContribution, years }) => {
-    const { yoyReturn } = usePortfolio();
+  useInvestmentStore(
+    ({ annualInflation, initialInvestment, monthlyContribution, years }) => {
+      const { annualReturn } = usePortfolio();
 
-    return calculateFutureInvestmentValue({
-      initialInvestment,
-      monthlyContribution,
-      years,
-      yoyReturn,
-    });
-  });
+      return calculateFutureInvestmentValue({
+        initialInvestment,
+        monthlyContribution,
+        years,
+        annualReturn,
+        annualInflation,
+      });
+    },
+  );
 
 export const useReturnValue = () =>
   useInvestmentStore((state) => {
-    const { yoyReturn } = usePortfolio();
+    const { annualReturn } = usePortfolio();
 
     return calculateReturnValue({
       totalInvested: calculateTotalInvested(state),
@@ -94,14 +99,15 @@ export const useReturnValue = () =>
         initialInvestment: state.initialInvestment,
         monthlyContribution: state.monthlyContribution,
         years: state.years,
-        yoyReturn,
+        annualInflation: state.annualInflation,
+        annualReturn,
       }),
     });
   });
 
 export const useRateOfReturn = () =>
   useInvestmentStore((state) => {
-    const { yoyReturn } = usePortfolio();
+    const { annualReturn } = usePortfolio();
 
     return calculateRateOfReturn({
       totalInvested: calculateTotalInvested(state),
@@ -109,21 +115,23 @@ export const useRateOfReturn = () =>
         initialInvestment: state.initialInvestment,
         monthlyContribution: state.monthlyContribution,
         years: state.years,
-        yoyReturn,
+        annualInflation: state.annualInflation,
+        annualReturn,
       }),
     });
   });
 
 export const useProjectionSeries = () =>
   useInvestmentStore((state) => {
-    const { yoyReturn } = usePortfolio();
+    const { annualReturn } = usePortfolio();
 
     return Array.from({ length: state.years }, (_, i) =>
       calculateFutureInvestmentValue({
         years: i + 1,
         initialInvestment: state.initialInvestment,
         monthlyContribution: state.monthlyContribution,
-        yoyReturn,
+        annualInflation: state.annualInflation,
+        annualReturn,
       }),
     );
   });

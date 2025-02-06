@@ -1,24 +1,49 @@
-export function calculateTotalInvested(args: {
+export function calculateTotalInvested({
+  initialInvestment,
+  monthlyContribution,
+  years,
+}: {
   initialInvestment: number;
   monthlyContribution: number;
   years: number;
 }): number {
-  return args.initialInvestment + args.monthlyContribution * 12 * args.years;
+  const months = years * 12;
+  const totalContribution = monthlyContribution * months;
+
+  return initialInvestment + totalContribution;
 }
 
-export function calculateFutureInvestmentValue(args: {
+export function calculateFutureInvestmentValue({
+  initialInvestment,
+  monthlyContribution,
+  annualReturn,
+  annualInflation,
+  years,
+}: {
   initialInvestment: number;
   monthlyContribution: number;
-  yoyReturn: number;
+  annualReturn: number;
+  annualInflation: number;
   years: number;
 }): number {
-  const periods = 12 * args.years; // n * t
-  const compoundFactor = (1 + args.yoyReturn / 12) ** periods;
-  const compoundInterestForPrincipal = args.initialInvestment * compoundFactor;
-  const futureValueOfSeries =
-    args.monthlyContribution * ((compoundFactor - 1) / (args.yoyReturn / 12));
+  const months = years * 12;
 
-  return compoundInterestForPrincipal + futureValueOfSeries;
+  // Compute monthly return and inflation rates
+  const monthlyReturn = annualReturn / 12;
+  const monthlyInflation = (1 + annualInflation) ** (1 / 12) - 1;
+
+  // Initial value in real terms
+  let realValue = initialInvestment;
+
+  for (let month = 0; month < months; month++) {
+    // Compute nominal value at the end of the month
+    const nominalValue = realValue * (1 + monthlyReturn) + monthlyContribution;
+
+    // Compute real value at the end of the month
+    realValue = nominalValue / (1 + monthlyInflation);
+  }
+
+  return realValue;
 }
 
 export function calculateReturnValue(args: {
