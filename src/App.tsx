@@ -22,7 +22,9 @@ export const App: FC = () => {
                 Simulate your investment return
               </h1>
             </div>
-            <SettingsDialog />
+            <div className="shrink-0">
+              <SettingsDialog />
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4 mt-8 md:mt-10 lg:mt-20">
