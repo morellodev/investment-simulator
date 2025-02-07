@@ -45,7 +45,7 @@ export const SettingsDialog: FC = () => {
             <legend className="sr-only">Set annual inflation rate</legend>
             <div className="mb-6 space-y-4">
               <Label>Annual Inflation Rate</Label>
-              <div className="text-xl font-medium tabular-nums">
+              <div className="text-xl font-medium">
                 <FormattedNumber
                   value={annualInflationCent / 100}
                   style="percent"
