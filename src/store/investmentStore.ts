@@ -56,8 +56,8 @@ export const useInvestmentStore = create<InvestmentStore>()(
         setInitialInvestment: (initialInvestment) => set({ initialInvestment }),
         setMonthlyContribution: (monthlyContribution) =>
           set({ monthlyContribution }),
-        setAnnualInflationCent: (annualInflation) =>
-          set({ annualInflationCent: annualInflation }),
+        setAnnualInflationCent: (annualInflationCent) =>
+          set({ annualInflationCent }),
         setYears: (years) => set({ years }),
         setPortfolioId: (portfolioId) => set({ portfolioId }),
       };
