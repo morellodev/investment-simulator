@@ -33,7 +33,7 @@ export const SettingsDialog: FC = () => {
           <span className="sr-only">Advanced Settings</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Advanced Settings</DialogTitle>
           <DialogDescription>
