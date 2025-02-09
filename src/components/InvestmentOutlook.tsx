@@ -22,7 +22,7 @@ const ProjectedValue: FC = () => {
   const futureInvestmentValue = useFutureInvestmentValue();
 
   return (
-    <div className="flex justify-between px-4 py-3 text-xl rounded bg-accent text-accent-foreground">
+    <div className="flex justify-between rounded bg-accent px-4 py-3 text-accent-foreground text-xl">
       <dt>Projected Value</dt>
       <dd className="font-semibold">
         <Currency value={futureInvestmentValue} />

@@ -13,12 +13,12 @@ export const PortfolioPreview: FC = () => {
     <Card className="px-4 pt-4 pb-3 shadow-inner">
       <div className="h-8 md:h-10">
         <Suspense
-          fallback={<div className="border border-dashed rounded size-full" />}
+          fallback={<div className="size-full rounded border border-dashed" />}
         >
           <PortfolioCompositionChartLazy />
         </Suspense>
       </div>
-      <p className="mt-2 text-xs text-muted-foreground">{description}</p>
+      <p className="mt-2 text-muted-foreground text-xs">{description}</p>
     </Card>
   );
 };
