@@ -81,6 +81,8 @@
 }
 
 @theme {
+  --breakpoint-2xl: initial;
+
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
