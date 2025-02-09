@@ -43,9 +43,9 @@ export const SettingsDialog: FC = () => {
         <div className="grid gap-4 py-4">
           <fieldset>
             <legend className="sr-only">Set annual inflation rate</legend>
-            <div className="mb-6 space-y-4">
+            <div className="mb-6 flex flex-col gap-4">
               <Label>Annual Inflation Rate</Label>
-              <div className="text-xl font-medium">
+              <div className="font-medium text-xl">
                 <FormattedNumber
                   value={annualInflationCent / 100}
                   style="percent"

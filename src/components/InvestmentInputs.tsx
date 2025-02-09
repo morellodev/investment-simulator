@@ -26,7 +26,7 @@ const InitialInvestmentField: FC = () => {
   return (
     <fieldset>
       <legend className="sr-only">Set initial investment</legend>
-      <div className="mb-4 space-y-2">
+      <div className="mb-4 flex flex-col gap-3">
         <Label htmlFor={id}>
           Initial Investment (<CurrencySymbol currency={currency} />)
         </Label>
@@ -68,7 +68,7 @@ const MonthlyContributionField: FC = () => {
   return (
     <fieldset>
       <legend className="sr-only">Set monthly contribution</legend>
-      <div className="mb-4 space-y-2">
+      <div className="mb-4 flex flex-col gap-3">
         <Label htmlFor={id}>
           Monthly Contribution (<CurrencySymbol currency={currency} />)
         </Label>
@@ -104,7 +104,7 @@ const TimeHorizonField: FC = () => {
   return (
     <fieldset>
       <legend className="sr-only">Set time horizon</legend>
-      <div className="mb-4 space-y-2">
+      <div className="mb-4 flex flex-col gap-3">
         <Label htmlFor={id}>Time Horizon (years)</Label>
         <Input
           id={id}

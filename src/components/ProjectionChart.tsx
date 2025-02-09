@@ -31,7 +31,7 @@ export const ProjectionChart: FC = () => {
   }));
 
   return series.length === 0 ? (
-    <div className="flex items-center justify-center h-full text-sm text-muted-foreground">
+    <div className="flex h-full items-center justify-center text-muted-foreground text-sm">
       Empty chart
     </div>
   ) : (
@@ -56,10 +56,10 @@ export const ProjectionChart: FC = () => {
               className="min-w-0"
               formatter={(value, _, item) => (
                 <div className="w-full">
-                  <h3 className="text-xs font-light uppercase text-muted-foreground">
+                  <h3 className="font-light text-muted-foreground text-xs uppercase">
                     Year {item.payload.year}
                   </h3>
-                  <p className="text-base font-bold">
+                  <p className="font-bold text-base">
                     <Currency value={value as number} />
                   </p>
                 </div>

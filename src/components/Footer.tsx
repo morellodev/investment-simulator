@@ -4,7 +4,7 @@ export const Footer: FC = () => {
   return (
     <footer className="pb-6">
       <div className="container">
-        <p className="text-sm leading-loose text-center text-balance text-muted-foreground md:text-left">
+        <p className="text-balance text-center text-muted-foreground text-sm leading-loose md:text-left">
           Built by{" "}
           <a
             href="https://morello.dev"
