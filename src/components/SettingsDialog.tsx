@@ -62,7 +62,7 @@ export const SettingsDialog: FC = () => {
         </div>
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="secondary">Close</Button>
+            <Button variant="outline">Close</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>
