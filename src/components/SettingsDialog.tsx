@@ -28,7 +28,7 @@ export const SettingsDialog: FC = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size="icon" variant="outline">
+        <Button size="icon" variant="outline" className="size-10">
           <Cog className="size-6" />
           <span className="sr-only">Advanced Settings</span>
         </Button>
