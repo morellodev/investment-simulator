@@ -14,7 +14,7 @@ import {
 
 const chartConfig = {
   value: {
-    color: "hsl(var(--primary))",
+    color: "var(--primary)",
   },
 } satisfies ChartConfig;
 

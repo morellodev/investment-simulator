@@ -8,11 +8,11 @@ import { Bar, ComposedChart, LabelList, XAxis, YAxis } from "recharts";
 const chartConfig = {
   bonds: {
     label: "Bonds",
-    color: "hsl(var(--secondary))",
+    color: "var(--secondary)",
   },
   stocks: {
     label: "Stocks",
-    color: "hsl(var(--primary))",
+    color: "var(--primary)",
   },
 } satisfies ChartConfig;
 
