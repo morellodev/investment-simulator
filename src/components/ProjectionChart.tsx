@@ -67,7 +67,7 @@ export const ProjectionChart: FC = () => {
             />
           }
         />
-        <Bar dataKey="value" fill="var(--color-value)" radius={[4, 4, 0, 0]} />
+        <Bar dataKey="value" fill="var(--color-value)" radius={[8, 8, 0, 0]} />
       </BarChart>
     </ChartContainer>
   );

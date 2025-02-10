@@ -34,7 +34,7 @@ export const PortfolioCompositionChart: FC = () => {
           dataKey="bonds"
           stackId="a"
           fill="var(--color-bonds)"
-          radius={[4, 0, 0, 4]}
+          radius={[8, 0, 0, 8]}
         >
           <LabelList
             className="fill-secondary-foreground"
@@ -45,7 +45,7 @@ export const PortfolioCompositionChart: FC = () => {
           dataKey="stocks"
           stackId="a"
           fill="var(--color-stocks)"
-          radius={[0, 4, 4, 0]}
+          radius={[0, 8, 8, 0]}
         >
           <LabelList
             className="fill-primary-foreground"
