@@ -10,7 +10,7 @@ export const PortfolioPreview: FC = () => {
   const { description } = usePortfolio();
 
   return (
-    <Card className="px-4 pt-4 pb-3 shadow-inner">
+    <Card className="inset-shadow-sm px-4 pt-4 pb-3 shadow-none">
       <div className="h-8 md:h-10">
         <Suspense
           fallback={<div className="size-full rounded border border-dashed" />}
