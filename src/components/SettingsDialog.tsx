@@ -3,7 +3,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
 import { useInvestmentStore } from "@/store/investmentStore";
 import { Cog } from "lucide-react";
-import { type FC, useState } from "react";
+import { type ComponentProps, type FC, useState } from "react";
 import { FormattedNumber } from "./FormattedNumber";
 import { Button } from "./ui/button";
 import {
@@ -29,14 +29,18 @@ import {
 import { Label } from "./ui/label";
 import { Slider } from "./ui/slider";
 
-const OpenButton: FC = () => (
-  <Button size="icon" variant="outline" className="size-10">
+const OpenButton: FC<ComponentProps<"button">> = (props) => (
+  <Button {...props} size="icon" variant="outline" className="size-10">
     <Cog className="size-6" />
     <span className="sr-only">Advanced Settings</span>
   </Button>
 );
 
-const CloseButton: FC = () => <Button variant="outline">Close</Button>;
+const CloseButton: FC<ComponentProps<"button">> = (props) => (
+  <Button {...props} variant="outline">
+    Close
+  </Button>
+);
 
 const SettingsForm: FC<{ className?: string }> = ({ className }) => {
   const annualInflationCent = useInvestmentStore(
