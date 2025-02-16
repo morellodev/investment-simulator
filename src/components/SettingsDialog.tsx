@@ -29,6 +29,15 @@ import {
 import { Label } from "./ui/label";
 import { Slider } from "./ui/slider";
 
+const OpenButton: FC = () => (
+  <Button size="icon" variant="outline" className="size-10">
+    <Cog className="size-6" />
+    <span className="sr-only">Advanced Settings</span>
+  </Button>
+);
+
+const CloseButton: FC = () => <Button variant="outline">Close</Button>;
+
 const SettingsForm: FC<{ className?: string }> = ({ className }) => {
   const annualInflationCent = useInvestmentStore(
     (state) => state.annualInflationCent,
@@ -69,10 +78,7 @@ export const SettingsDialog: FC = () => {
   return isAboveBreakpointSm ? (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button size="icon" variant="outline" className="size-10">
-          <Cog className="size-6" />
-          <span className="sr-only">Advanced Settings</span>
-        </Button>
+        <OpenButton />
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
@@ -84,7 +90,7 @@ export const SettingsDialog: FC = () => {
         <SettingsForm />
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="outline">Close</Button>
+            <CloseButton />
           </DialogClose>
         </DialogFooter>
       </DialogContent>
@@ -92,13 +98,10 @@ export const SettingsDialog: FC = () => {
   ) : (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button size="icon" variant="outline" className="size-10">
-          <Cog className="size-6" />
-          <span className="sr-only">Advanced Settings</span>
-        </Button>
+        <OpenButton />
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader className="text-left">
+        <DrawerHeader>
           <DrawerTitle>Advanced Settings</DrawerTitle>
           <DrawerDescription>
             Customize the simulation with advanced settings.
@@ -107,7 +110,7 @@ export const SettingsDialog: FC = () => {
         <SettingsForm className="px-4" />
         <DrawerFooter>
           <DrawerClose asChild>
-            <Button variant="outline">Close</Button>
+            <CloseButton />
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
