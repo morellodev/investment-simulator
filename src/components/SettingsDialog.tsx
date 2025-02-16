@@ -100,7 +100,7 @@ export const SettingsDialog: FC = () => {
       </DialogContent>
     </Dialog>
   ) : (
-    <Drawer open={open} onOpenChange={setOpen}>
+    <Drawer autoFocus open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <OpenButton />
       </DrawerTrigger>
