@@ -1,7 +1,9 @@
 import { annualInflationRange } from "@/constants";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { cn } from "@/lib/utils";
 import { useInvestmentStore } from "@/store/investmentStore";
 import { Cog } from "lucide-react";
-import type { FC } from "react";
+import { type FC, useState } from "react";
 import { FormattedNumber } from "./FormattedNumber";
 import { Button } from "./ui/button";
 import {
@@ -14,10 +16,20 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "./ui/drawer";
 import { Label } from "./ui/label";
 import { Slider } from "./ui/slider";
 
-export const SettingsDialog: FC = () => {
+const SettingsForm: FC<{ className?: string }> = ({ className }) => {
   const annualInflationCent = useInvestmentStore(
     (state) => state.annualInflationCent,
   );
@@ -26,7 +38,36 @@ export const SettingsDialog: FC = () => {
   );
 
   return (
-    <Dialog>
+    <div className={cn("grid gap-4 py-4", className)}>
+      <fieldset>
+        <legend className="sr-only">Set annual inflation rate</legend>
+        <div className="mb-6 flex flex-col gap-4">
+          <Label>Annual Inflation Rate</Label>
+          <div className="font-medium text-xl">
+            <FormattedNumber
+              value={annualInflationCent / 100}
+              style="percent"
+            />
+          </div>
+        </div>
+        <Slider
+          min={annualInflationRange[0]}
+          max={annualInflationRange[1]}
+          value={[annualInflationCent]}
+          onValueChange={([v]) => setAnnualInflationCent(v)}
+        />
+      </fieldset>
+    </div>
+  );
+};
+
+export const SettingsDialog: FC = () => {
+  const [open, setOpen] = useState(false);
+
+  const isAboveBreakpointSm = useMediaQuery("(min-width: 40rem)");
+
+  return isAboveBreakpointSm ? (
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button size="icon" variant="outline" className="size-10">
           <Cog className="size-6" />
@@ -40,26 +81,7 @@ export const SettingsDialog: FC = () => {
             Customize the simulation with advanced settings.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <fieldset>
-            <legend className="sr-only">Set annual inflation rate</legend>
-            <div className="mb-6 flex flex-col gap-4">
-              <Label>Annual Inflation Rate</Label>
-              <div className="font-medium text-xl">
-                <FormattedNumber
-                  value={annualInflationCent / 100}
-                  style="percent"
-                />
-              </div>
-            </div>
-            <Slider
-              min={annualInflationRange[0]}
-              max={annualInflationRange[1]}
-              value={[annualInflationCent]}
-              onValueChange={([v]) => setAnnualInflationCent(v)}
-            />
-          </fieldset>
-        </div>
+        <SettingsForm />
         <DialogFooter>
           <DialogClose asChild>
             <Button variant="outline">Close</Button>
@@ -67,5 +89,28 @@ export const SettingsDialog: FC = () => {
         </DialogFooter>
       </DialogContent>
     </Dialog>
+  ) : (
+    <Drawer open={open} onOpenChange={setOpen}>
+      <DrawerTrigger asChild>
+        <Button size="icon" variant="outline" className="size-10">
+          <Cog className="size-6" />
+          <span className="sr-only">Advanced Settings</span>
+        </Button>
+      </DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader className="text-left">
+          <DrawerTitle>Advanced Settings</DrawerTitle>
+          <DrawerDescription>
+            Customize the simulation with advanced settings.
+          </DrawerDescription>
+        </DrawerHeader>
+        <SettingsForm className="px-4" />
+        <DrawerFooter>
+          <DrawerClose asChild>
+            <Button variant="outline">Close</Button>
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
   );
 };
