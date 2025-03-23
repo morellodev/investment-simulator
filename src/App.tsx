@@ -37,7 +37,6 @@ export const App: FC = () => {
             <section className="col-span-full lg:col-span-1">
               <Card className="h-full px-4 py-5 lg:px-9 lg:py-8">
                 <PortfolioComposer />
-                <div className="my-3" />
                 <PortfolioPreview />
               </Card>
             </section>
@@ -45,7 +44,7 @@ export const App: FC = () => {
             <section className="col-span-full lg:col-span-1">
               <Card className="h-full px-4 py-5 lg:px-9 lg:py-8">
                 <InvestmentOutlook />
-                <Separator className="my-6" />
+                <Separator />
                 <ProjectionDetails />
               </Card>
             </section>
