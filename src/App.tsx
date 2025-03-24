@@ -27,7 +27,7 @@ export const App: FC = () => {
             </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-4 md:mt-10 lg:mt-20">
+          <div className="mt-8 grid grid-cols-2 gap-4 md:mt-10 md:gap-6 lg:mt-20 lg:gap-8">
             <section className="col-span-full">
               <Card className="h-full px-4 py-5 lg:px-9 lg:py-8">
                 <InvestmentInputs />
