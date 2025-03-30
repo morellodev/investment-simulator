@@ -13,8 +13,7 @@ export const portfolios = [
   {
     id: "conservative",
     name: "Conservative",
-    description:
-      "Primarily bonds with some low-risk stocks (80% bonds, 20% stocks)",
+    description: "Primarily bonds with some stocks (80% bonds, 20% stocks)",
     annualReturn: 0.05,
     composition: {
       stocks: 0.2,
