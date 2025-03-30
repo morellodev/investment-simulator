@@ -1,10 +1,9 @@
-import { annualInflationRange } from "@/constants";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
-import { useInvestmentStore } from "@/store/investmentStore";
 import { Cog } from "lucide-react";
 import { type ComponentProps, type FC, useState } from "react";
-import { FormattedNumber } from "./FormattedNumber";
+import { CurrencySelect } from "./CurrencySelect";
+import { InflationRateSlider } from "./InflationRateSlider";
 import { Button } from "./ui/button";
 import {
   Dialog,
@@ -27,7 +26,6 @@ import {
   DrawerTrigger,
 } from "./ui/drawer";
 import { Label } from "./ui/label";
-import { Slider } from "./ui/slider";
 
 const OpenButton: FC<ComponentProps<"button">> = (props) => (
   <Button {...props} size="icon" variant="outline" className="size-10">
@@ -43,34 +41,18 @@ const CloseButton: FC<ComponentProps<"button">> = (props) => (
 );
 
 const SettingsForm: FC<{ className?: string }> = ({ className }) => {
-  const annualInflationCent = useInvestmentStore(
-    (state) => state.annualInflationCent,
-  );
-  const setAnnualInflationCent = useInvestmentStore(
-    (state) => state.setAnnualInflationCent,
-  );
-
   return (
-    <div className={cn("grid gap-4 py-4", className)}>
-      <fieldset>
-        <legend className="sr-only">Set annual inflation rate</legend>
-        <div className="mb-6 flex flex-col gap-4">
-          <Label>Annual Inflation Rate</Label>
-          <div className="font-medium text-xl">
-            <FormattedNumber
-              value={annualInflationCent / 100}
-              style="percent"
-            />
-          </div>
-        </div>
-        <Slider
-          min={annualInflationRange[0]}
-          max={annualInflationRange[1]}
-          value={[annualInflationCent]}
-          onValueChange={([v]) => setAnnualInflationCent(v)}
-        />
-      </fieldset>
-    </div>
+    <form className={cn("grid gap-8 py-4", className)}>
+      <Label className="flex flex-col items-stretch gap-4">
+        <span>Annual Inflation Rate</span>
+        <InflationRateSlider />
+      </Label>
+
+      <Label className="flex flex-col items-stretch gap-4">
+        <span>Currency</span>
+        <CurrencySelect />
+      </Label>
+    </form>
   );
 };
 

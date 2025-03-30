@@ -7,6 +7,15 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "a11y": {
+        "noLabelWithoutControl": {
+          "level": "error",
+          "options": {
+            "labelComponents": ["Label"],
+            "inputComponents": ["CurrencySelect", "InflationRateSlider"]
+          }
+        }
+      },
       "nursery": {
         "useSortedClasses": {
           "fix": "safe",

@@ -92,6 +92,7 @@ function FormLabel({
   const { error, formItemId } = useFormField();
 
   return (
+    // biome-ignore lint/a11y/noLabelWithoutControl: form control is passed as a child
     <Label
       data-slot="form-label"
       data-error={!!error}
