@@ -22,7 +22,12 @@ export const CurrencySelect: FC = () => {
       <SelectContent>
         {currencies.map((currency) => (
           <SelectItem key={currency.code} value={currency.code}>
-            {currency.name} (<CurrencySymbol currency={currency.code} />)
+            <div className="flex flex-row-reverse gap-[1ch]">
+              <span>{currency.name}</span>
+              <span aria-hidden className="text-muted-foreground">
+                <CurrencySymbol currency={currency.code} />
+              </span>
+            </div>
           </SelectItem>
         ))}
       </SelectContent>
