@@ -1,5 +1,5 @@
-import { useInvestmentStore } from "@/store/investmentStore";
 import type { FC } from "react";
+import { useInvestmentStore } from "@/store/investmentStore";
 
 type Props = { value: number } & Intl.NumberFormatOptions;
 

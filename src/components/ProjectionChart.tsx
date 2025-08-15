@@ -1,9 +1,9 @@
+import type { FC } from "react";
+import { Bar, BarChart, XAxis, YAxis } from "recharts";
 import {
   useInvestmentStore,
   useProjectionSeries,
 } from "@/store/investmentStore";
-import type { FC } from "react";
-import { Bar, BarChart, XAxis, YAxis } from "recharts";
 import { Currency } from "./Currency";
 import {
   type ChartConfig,

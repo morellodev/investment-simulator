@@ -1,7 +1,7 @@
-import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { cn } from "@/lib/utils";
 import { Cog } from "lucide-react";
 import { type ComponentProps, type FC, useState } from "react";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { cn } from "@/lib/utils";
 import { CurrencySelect } from "./CurrencySelect";
 import { InflationRateSlider } from "./InflationRateSlider";
 import { Button } from "./ui/button";

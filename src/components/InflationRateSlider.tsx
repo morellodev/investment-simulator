@@ -1,6 +1,6 @@
+import type { FC } from "react";
 import { annualInflationRange } from "@/constants";
 import { useInvestmentStore } from "@/store/investmentStore";
-import type { FC } from "react";
 import { FormattedNumber } from "./FormattedNumber";
 import { Slider } from "./ui/slider";
 

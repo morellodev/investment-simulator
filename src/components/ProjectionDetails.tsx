@@ -1,5 +1,5 @@
-import { useRateOfReturn, useReturnValue } from "@/store/investmentStore";
 import type { FC } from "react";
+import { useRateOfReturn, useReturnValue } from "@/store/investmentStore";
 import { Currency } from "./Currency";
 import { Percent } from "./Percent";
 

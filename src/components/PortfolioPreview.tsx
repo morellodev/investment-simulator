@@ -1,5 +1,5 @@
+import { type FC, lazy, Suspense } from "react";
 import { usePortfolio } from "@/store/investmentStore";
-import { type FC, Suspense, lazy } from "react";
 import { Card } from "./ui/card";
 
 const PortfolioCompositionChartLazy = lazy(

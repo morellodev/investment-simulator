@@ -1,5 +1,5 @@
-import { useInvestmentStore } from "@/store/investmentStore";
 import type { FC } from "react";
+import { useInvestmentStore } from "@/store/investmentStore";
 import { FormattedNumber } from "./FormattedNumber";
 
 type Props = { value: number } & Omit<

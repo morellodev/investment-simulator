@@ -1,4 +1,4 @@
-import { type FC, Suspense, lazy } from "react";
+import { type FC, lazy, Suspense } from "react";
 import { Footer } from "./components/Footer";
 import { InvestmentInputs } from "./components/InvestmentInputs";
 import { InvestmentOutlook } from "./components/InvestmentOutlook";

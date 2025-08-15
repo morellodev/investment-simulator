@@ -1,9 +1,9 @@
 "use client";
 
-import { type ChartConfig, ChartContainer } from "@/components/ui/chart";
-import { usePortfolio } from "@/store/investmentStore";
 import type { FC } from "react";
 import { Bar, ComposedChart, LabelList, XAxis, YAxis } from "recharts";
+import { type ChartConfig, ChartContainer } from "@/components/ui/chart";
+import { usePortfolio } from "@/store/investmentStore";
 
 const chartConfig = {
   bonds: {

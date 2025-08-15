@@ -1,6 +1,6 @@
+import { type FC, useId } from "react";
 import { portfolios } from "@/data/portfolios";
 import { useInvestmentStore } from "@/store/investmentStore";
-import { type FC, useId } from "react";
 import { ReturnRate } from "./ReturnRate";
 import { Label } from "./ui/label";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";

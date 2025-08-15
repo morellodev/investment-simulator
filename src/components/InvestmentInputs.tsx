@@ -1,3 +1,4 @@
+import { type FC, useId } from "react";
 import {
   initialInvestmentRange,
   investmentDurationYearsRange,
@@ -5,7 +6,6 @@ import {
 } from "@/constants";
 import { useInvestmentStore } from "@/store/investmentStore";
 import { clamp } from "@/utils/math";
-import { type FC, useId } from "react";
 import { CurrencySymbol } from "./CurrencySymbol";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";

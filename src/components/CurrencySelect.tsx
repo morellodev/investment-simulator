@@ -1,6 +1,6 @@
+import type { FC } from "react";
 import { currencies } from "@/data/currencies";
 import { useInvestmentStore } from "@/store/investmentStore";
-import type { FC } from "react";
 import { CurrencySymbol } from "./CurrencySymbol";
 import {
   Select,
