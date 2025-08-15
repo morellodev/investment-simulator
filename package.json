@@ -39,13 +39,13 @@
     "@types/node": "^22.15.17",
     "@types/react": "19.1.10",
     "@types/react-dom": "19.1.7",
-    "@vitejs/plugin-react": "^4.4.1",
+    "@vitejs/plugin-react": "^5.0.0",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
     "lefthook": "^1.12.3",
     "tailwindcss": "^4.1.12",
     "typescript": "^5.8.3",
-    "vite": "^6.3.5",
-    "vite-plugin-sitemap": "^0.7.1"
+    "vite": "^7.1.2",
+    "vite-plugin-sitemap": "^0.8.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
