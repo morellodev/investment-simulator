@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# START Ruler Generated Files
+*.bak
+.cursor/rules/ruler_cursor_instructions.mdc
+.cursor/rules/ruler_cursor_instructions.mdc.bak
+# END Ruler Generated Files
