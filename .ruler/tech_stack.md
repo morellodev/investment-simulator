@@ -9,3 +9,4 @@
 - ShadcnUI
 - Radix UI
 - Biome (in place of ESLint/Prettier)
+- React Compiler
