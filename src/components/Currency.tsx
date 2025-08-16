@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { useInvestmentStore } from "@/store/investmentStore";
+import { useAppStore } from "@/store/appStore";
 import { FormattedNumber } from "./FormattedNumber";
 
 type Props = { value: number } & Omit<
@@ -12,7 +12,7 @@ export const Currency: FC<Props> = ({
   maximumFractionDigits = 0,
   ...rest
 }) => {
-  const currency = useInvestmentStore((state) => state.currency);
+  const currency = useAppStore((state) => state.currency);
 
   return (
     <FormattedNumber

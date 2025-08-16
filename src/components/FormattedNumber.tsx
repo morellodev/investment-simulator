@@ -1,10 +1,10 @@
 import type { FC } from "react";
-import { useInvestmentStore } from "@/store/investmentStore";
+import { useAppStore } from "@/store/appStore";
 
 type Props = { value: number } & Intl.NumberFormatOptions;
 
 export const FormattedNumber: FC<Props> = ({ value, ...options }) => {
-  const locale = useInvestmentStore((state) => state.locale);
+  const locale = useAppStore((state) => state.locale);
 
   return (
     <span className="tabular-nums">

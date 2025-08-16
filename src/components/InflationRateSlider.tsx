@@ -1,24 +1,29 @@
 import type { FC } from "react";
+import { useShallow } from "zustand/shallow";
 import { annualInflationRange } from "@/constants";
-import { useInvestmentStore } from "@/store/investmentStore";
+import { useAppStore } from "@/store/appStore";
 import { FormattedNumber } from "./FormattedNumber";
 import { Slider } from "./ui/slider";
 
 export const InflationRateSlider: FC = () => {
-  const value = useInvestmentStore((state) => state.annualInflationCent);
-  const setValue = useInvestmentStore((state) => state.setAnnualInflationCent);
+  const { annualInflationCent, setAnnualInflationCent } = useAppStore(
+    useShallow((state) => ({
+      annualInflationCent: state.annualInflationCent,
+      setAnnualInflationCent: state.setAnnualInflationCent,
+    })),
+  );
 
   return (
     <div className="flex flex-col gap-4">
       <div className="font-medium text-xl/none">
-        <FormattedNumber value={value / 100} style="percent" />
+        <FormattedNumber value={annualInflationCent / 100} style="percent" />
       </div>
 
       <Slider
         min={annualInflationRange[0]}
         max={annualInflationRange[1]}
-        value={[value]}
-        onValueChange={([v]) => setValue(v)}
+        value={[annualInflationCent]}
+        onValueChange={([v]) => setAnnualInflationCent(v)}
       />
     </div>
   );

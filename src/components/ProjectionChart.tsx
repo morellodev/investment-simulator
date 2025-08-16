@@ -1,9 +1,7 @@
-import type { FC } from "react";
+import { type FC, useMemo } from "react";
 import { Bar, BarChart, XAxis, YAxis } from "recharts";
-import {
-  useInvestmentStore,
-  useProjectionSeries,
-} from "@/store/investmentStore";
+import { useShallow } from "zustand/shallow";
+import { useAppStore, useProjectionSeries } from "@/store/appStore";
 import { Currency } from "./Currency";
 import {
   type ChartConfig,
@@ -19,16 +17,23 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export const ProjectionChart: FC = () => {
-  const currency = useInvestmentStore((state) => state.currency);
-  const locale = useInvestmentStore((state) => state.locale);
+  const { currency, locale } = useAppStore(
+    useShallow((state) => ({
+      currency: state.currency,
+      locale: state.locale,
+    })),
+  );
+
   const series = useProjectionSeries();
 
-  const currentYear = new Date().getFullYear();
+  const data = useMemo(() => {
+    const currentYear = new Date().getFullYear();
 
-  const data = series.map((value, index) => ({
-    year: currentYear + index + 1,
-    value,
-  }));
+    return series.map((value, index) => ({
+      year: currentYear + index + 1,
+      value,
+    }));
+  }, [series]);
 
   return series.length === 0 ? (
     <div className="flex h-full items-center justify-center text-muted-foreground text-sm">

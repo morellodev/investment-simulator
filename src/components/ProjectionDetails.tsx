@@ -1,12 +1,12 @@
 import type { FC } from "react";
-import { useRateOfReturn, useReturnValue } from "@/store/investmentStore";
+import { useInvestmentMetrics } from "@/store/appStore";
 import { Currency } from "./Currency";
 import { Percent } from "./Percent";
 
 const InvestmentReturn: FC = () => {
-  const returnRate = useRateOfReturn();
+  const { rateOfReturn } = useInvestmentMetrics();
 
-  const normalizedReturnRate = Number.isNaN(returnRate) ? 0 : returnRate;
+  const normalizedReturnRate = Number.isNaN(rateOfReturn) ? 0 : rateOfReturn;
 
   return (
     <div className="flex justify-between px-4">
@@ -29,7 +29,7 @@ const InvestmentReturn: FC = () => {
 };
 
 const TotalEarned: FC = () => {
-  const returnValue = useReturnValue();
+  const { returnValue } = useInvestmentMetrics();
 
   return (
     <div className="flex justify-between px-4">

@@ -1,6 +1,7 @@
 import { type FC, useId } from "react";
+import { useShallow } from "zustand/shallow";
 import { portfolios } from "@/data/portfolios";
-import { useInvestmentStore } from "@/store/investmentStore";
+import { useAppStore } from "@/store/appStore";
 import { ReturnRate } from "./ReturnRate";
 import { Label } from "./ui/label";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
@@ -11,8 +12,12 @@ export const PortfolioComposer: FC = () => {
   const controlId = `${idPrefix}-control`;
   const descriptionId = `${idPrefix}-description`;
 
-  const portfolioId = useInvestmentStore((state) => state.portfolioId);
-  const setPortfolioId = useInvestmentStore((state) => state.setPortfolioId);
+  const { portfolioId, setPortfolioId } = useAppStore(
+    useShallow((state) => ({
+      portfolioId: state.portfolioId,
+      setPortfolioId: state.setPortfolioId,
+    })),
+  );
 
   return (
     <fieldset className="@container space-y-2">

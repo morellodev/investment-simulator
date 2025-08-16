@@ -9,7 +9,6 @@ export function calculateTotalInvested({
 }): number {
   const months = years * 12;
   const totalContribution = monthlyContribution * months;
-
   return initialInvestment + totalContribution;
 }
 
@@ -43,16 +42,62 @@ export function calculateFutureInvestmentValue({
   return value;
 }
 
-export function calculateReturnValue(args: {
+export function calculateReturnValue({
+  totalInvested,
+  futureInvestmentValue,
+}: {
   totalInvested: number;
   futureInvestmentValue: number;
 }): number {
-  return args.futureInvestmentValue - args.totalInvested;
+  return futureInvestmentValue - totalInvested;
 }
 
-export function calculateRateOfReturn(args: {
+export function calculateRateOfReturn({
+  totalInvested,
+  futureInvestmentValue,
+}: {
   totalInvested: number;
   futureInvestmentValue: number;
 }): number {
-  return calculateReturnValue(args) / args.totalInvested;
+  return (
+    calculateReturnValue({ totalInvested, futureInvestmentValue }) /
+    totalInvested
+  );
+}
+
+type InvestmentCalculationParams = {
+  initialInvestment: number;
+  monthlyContribution: number;
+  annualReturn: number;
+  annualInflation: number;
+  years: number;
+};
+
+type InvestmentCalculationResults = {
+  totalInvested: number;
+  futureInvestmentValue: number;
+  returnValue: number;
+  rateOfReturn: number;
+};
+
+export function calculateInvestmentMetrics(
+  params: InvestmentCalculationParams,
+): InvestmentCalculationResults {
+  const totalInvested = calculateTotalInvested(params);
+  const futureInvestmentValue = calculateFutureInvestmentValue(params);
+  const returnValue = calculateReturnValue({
+    totalInvested,
+    futureInvestmentValue,
+  });
+  const rateOfReturn = calculateRateOfReturn({
+    totalInvested,
+    futureInvestmentValue,
+  });
+
+  return {
+    totalInvested,
+    futureInvestmentValue,
+    returnValue,
+    rateOfReturn,
+  };
 }

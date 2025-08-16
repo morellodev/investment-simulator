@@ -1,6 +1,7 @@
 import type { FC } from "react";
+import { useShallow } from "zustand/shallow";
 import { currencies } from "@/data/currencies";
-import { useInvestmentStore } from "@/store/investmentStore";
+import { useAppStore } from "@/store/appStore";
 import { CurrencySymbol } from "./CurrencySymbol";
 import {
   Select,
@@ -11,11 +12,15 @@ import {
 } from "./ui/select";
 
 export const CurrencySelect: FC = () => {
-  const value = useInvestmentStore((state) => state.currency);
-  const setValue = useInvestmentStore((state) => state.setCurrency);
+  const { currency, setCurrency } = useAppStore(
+    useShallow((state) => ({
+      currency: state.currency,
+      setCurrency: state.setCurrency,
+    })),
+  );
 
   return (
-    <Select value={value} onValueChange={setValue}>
+    <Select value={currency} onValueChange={setCurrency}>
       <SelectTrigger className="w-full">
         <SelectValue />
       </SelectTrigger>

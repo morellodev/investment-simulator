@@ -1,12 +1,9 @@
 import type { FC } from "react";
-import {
-  useFutureInvestmentValue,
-  useTotalInvested,
-} from "@/store/investmentStore";
+import { useInvestmentMetrics } from "@/store/appStore";
 import { Currency } from "./Currency";
 
 const TotalInvested: FC = () => {
-  const totalInvested = useTotalInvested();
+  const { totalInvested } = useInvestmentMetrics();
 
   return (
     <div className="flex justify-between px-4 py-3 text-xl">
@@ -19,7 +16,7 @@ const TotalInvested: FC = () => {
 };
 
 const ProjectedValue: FC = () => {
-  const futureInvestmentValue = useFutureInvestmentValue();
+  const { futureInvestmentValue } = useInvestmentMetrics();
 
   return (
     <div className="flex justify-between rounded-lg bg-accent px-4 py-3 text-accent-foreground text-xl">

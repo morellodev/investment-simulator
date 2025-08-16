@@ -1,10 +1,11 @@
 import { type FC, useId } from "react";
+import { useShallow } from "zustand/shallow";
 import {
   initialInvestmentRange,
   investmentDurationYearsRange,
   monthlyContributionRange,
 } from "@/constants";
-import { useInvestmentStore } from "@/store/investmentStore";
+import { useAppStore } from "@/store/appStore";
 import { clamp } from "@/utils/math";
 import { CurrencySymbol } from "./CurrencySymbol";
 import { Input } from "./ui/input";
@@ -14,13 +15,12 @@ import { Slider } from "./ui/slider";
 const InitialInvestmentField: FC = () => {
   const id = useId();
 
-  const currency = useInvestmentStore((state) => state.currency);
-
-  const initialInvestment = useInvestmentStore(
-    (state) => state.initialInvestment,
-  );
-  const setInitialInvestment = useInvestmentStore(
-    (state) => state.setInitialInvestment,
+  const { currency, initialInvestment, setInitialInvestment } = useAppStore(
+    useShallow((state) => ({
+      currency: state.currency,
+      initialInvestment: state.initialInvestment,
+      setInitialInvestment: state.setInitialInvestment,
+    })),
   );
 
   return (
@@ -56,13 +56,12 @@ const InitialInvestmentField: FC = () => {
 const MonthlyContributionField: FC = () => {
   const id = useId();
 
-  const currency = useInvestmentStore((state) => state.currency);
-
-  const monthlyContribution = useInvestmentStore(
-    (state) => state.monthlyContribution,
-  );
-  const setMonthlyContribution = useInvestmentStore(
-    (state) => state.setMonthlyContribution,
+  const { currency, monthlyContribution, setMonthlyContribution } = useAppStore(
+    useShallow((state) => ({
+      currency: state.currency,
+      monthlyContribution: state.monthlyContribution,
+      setMonthlyContribution: state.setMonthlyContribution,
+    })),
   );
 
   return (
@@ -98,8 +97,12 @@ const MonthlyContributionField: FC = () => {
 const TimeHorizonField: FC = () => {
   const id = useId();
 
-  const years = useInvestmentStore((state) => state.years);
-  const setYears = useInvestmentStore((state) => state.setYears);
+  const { years, setYears } = useAppStore(
+    useShallow((state) => ({
+      years: state.years,
+      setYears: state.setYears,
+    })),
+  );
 
   return (
     <fieldset>
