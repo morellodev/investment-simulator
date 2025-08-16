@@ -5,3 +5,4 @@
 - Don't put unnecessary comments
 - Prefer a functional coding style
 - Use the Standard Commit message convention for writing commit messages
+- Follow best web accessibility practices
