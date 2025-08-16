@@ -1,6 +1,6 @@
+import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { useShallow } from "zustand/shallow";
-import { createWithEqualityFn as create } from "zustand/traditional";
 import { type Portfolio, portfolios } from "@/data/portfolios";
 import {
   calculateFutureInvestmentValue,
