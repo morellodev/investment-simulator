@@ -52,6 +52,11 @@
       "@tailwindcss/oxide",
       "esbuild",
       "lefthook"
-    ]
+    ],
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "use-sync-external-store>react": "19"
+      }
+    }
   }
 }
