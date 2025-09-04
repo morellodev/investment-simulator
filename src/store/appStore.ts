@@ -2,10 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { useShallow } from "zustand/shallow";
 import { type Portfolio, portfolios } from "@/data/portfolios";
-import {
-  calculateFutureInvestmentValue,
-  calculateInvestmentMetrics,
-} from "@/utils/finance";
+import { calculateInvestmentMetrics } from "@/utils/finance";
 import {
   createInvestmentSlice,
   type InvestmentSlice,
@@ -57,16 +54,30 @@ export const useProjectionSeries = () => {
   const { annualReturn } = usePortfolio();
 
   return useAppStore(
-    useShallow((state) =>
-      Array.from({ length: state.years }, (_, i) =>
-        calculateFutureInvestmentValue({
-          years: i + 1,
-          initialInvestment: state.initialInvestment,
-          monthlyContribution: state.monthlyContribution,
-          annualInflation: state.annualInflationCent / 100,
-          annualReturn,
-        }),
-      ),
-    ),
+    useShallow((state) => {
+      const {
+        initialInvestment,
+        monthlyContribution,
+        years,
+        annualInflationCent,
+      } = state;
+      const annualInflation = annualInflationCent / 100;
+
+      const realAnnualReturn = (1 + annualReturn) / (1 + annualInflation) - 1;
+      const monthlyRealReturn = realAnnualReturn / 12;
+
+      const series = [];
+      let currentValue = initialInvestment;
+
+      for (let year = 1; year <= years; year++) {
+        for (let month = 0; month < 12; month++) {
+          currentValue =
+            currentValue * (1 + monthlyRealReturn) + monthlyContribution;
+        }
+        series.push(currentValue);
+      }
+
+      return series;
+    }),
   );
 };
