@@ -7,6 +7,7 @@ import { PortfolioPreview } from "./components/PortfolioPreview";
 import { ProjectionDetails } from "./components/ProjectionDetails";
 import { SettingsDialog } from "./components/SettingsDialog";
 import { Card } from "./components/ui/card";
+import { Empty, EmptyDescription } from "./components/ui/empty";
 import { Separator } from "./components/ui/separator";
 
 const ProjectionChartLazy = lazy(() => import("./components/ProjectionChart"));
@@ -54,9 +55,9 @@ export const App: FC = () => {
                 <div className="h-48 md:h-64 lg:h-80">
                   <Suspense
                     fallback={
-                      <div className="flex h-full items-center justify-center text-muted-foreground text-sm">
-                        Loading chart...
-                      </div>
+                      <Empty className="h-full">
+                        <EmptyDescription>Loading chart...</EmptyDescription>
+                      </Empty>
                     }
                   >
                     <ProjectionChartLazy />

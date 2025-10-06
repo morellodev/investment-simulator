@@ -9,6 +9,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "./ui/chart";
+import { Empty, EmptyDescription } from "./ui/empty";
 
 const chartConfig = {
   value: {
@@ -36,9 +37,9 @@ export const ProjectionChart: FC = () => {
   }, [series]);
 
   return series.length === 0 ? (
-    <div className="flex h-full items-center justify-center text-muted-foreground text-sm">
-      Empty chart
-    </div>
+    <Empty className="h-full">
+      <EmptyDescription>Empty chart</EmptyDescription>
+    </Empty>
   ) : (
     <ChartContainer config={chartConfig} className="size-full">
       <BarChart data={data} margin={{ left: 0, right: 0 }}>
