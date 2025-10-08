@@ -1,4 +1,4 @@
-import { type FC, useMemo } from "react";
+import type { FC } from "react";
 import { Bar, BarChart, XAxis, YAxis } from "recharts";
 import { useShallow } from "zustand/shallow";
 import { useAppStore, useProjectionSeries } from "@/store/appStore";
@@ -27,14 +27,11 @@ export const ProjectionChart: FC = () => {
 
   const series = useProjectionSeries();
 
-  const data = useMemo(() => {
-    const currentYear = new Date().getFullYear();
-
-    return series.map((value, index) => ({
-      year: currentYear + index + 1,
-      value,
-    }));
-  }, [series]);
+  const currentYear = new Date().getFullYear();
+  const data = series.map((value, index) => ({
+    year: currentYear + index + 1,
+    value,
+  }));
 
   return series.length === 0 ? (
     <Empty className="h-full">
