@@ -8,8 +8,8 @@ import {
 import { useAppStore } from "@/store/appStore";
 import { clamp } from "@/utils/math";
 import { CurrencySymbol } from "./CurrencySymbol";
+import { Field, FieldGroup, FieldLabel } from "./ui/field";
 import { Input } from "./ui/input";
-import { Label } from "./ui/label";
 import { Slider } from "./ui/slider";
 
 const InitialInvestmentField: FC = () => {
@@ -24,12 +24,11 @@ const InitialInvestmentField: FC = () => {
   );
 
   return (
-    <fieldset>
-      <legend className="sr-only">Set initial investment</legend>
-      <div className="mb-4 flex flex-col gap-3">
-        <Label htmlFor={id}>
+    <Field>
+      <div className="mb-2 flex flex-col gap-3">
+        <FieldLabel htmlFor={id}>
           Initial Investment (<CurrencySymbol currency={currency} />)
-        </Label>
+        </FieldLabel>
         <Input
           id={id}
           type="text"
@@ -49,7 +48,7 @@ const InitialInvestmentField: FC = () => {
         value={[initialInvestment]}
         onValueChange={([v]) => setInitialInvestment(v)}
       />
-    </fieldset>
+    </Field>
   );
 };
 
@@ -65,12 +64,11 @@ const MonthlyContributionField: FC = () => {
   );
 
   return (
-    <fieldset>
-      <legend className="sr-only">Set monthly contribution</legend>
-      <div className="mb-4 flex flex-col gap-3">
-        <Label htmlFor={id}>
+    <Field>
+      <div className="mb-2 flex flex-col gap-3">
+        <FieldLabel htmlFor={id}>
           Monthly Contribution (<CurrencySymbol currency={currency} />)
-        </Label>
+        </FieldLabel>
         <Input
           id={id}
           type="text"
@@ -90,7 +88,7 @@ const MonthlyContributionField: FC = () => {
         value={[monthlyContribution]}
         onValueChange={([v]) => setMonthlyContribution(v)}
       />
-    </fieldset>
+    </Field>
   );
 };
 
@@ -105,10 +103,9 @@ const TimeHorizonField: FC = () => {
   );
 
   return (
-    <fieldset>
-      <legend className="sr-only">Set time horizon</legend>
-      <div className="mb-4 flex flex-col gap-3">
-        <Label htmlFor={id}>Time Horizon (years)</Label>
+    <Field>
+      <div className="mb-2 flex flex-col gap-3">
+        <FieldLabel htmlFor={id}>Time Horizon (years)</FieldLabel>
         <Input
           id={id}
           type="text"
@@ -127,16 +124,16 @@ const TimeHorizonField: FC = () => {
         value={[years]}
         onValueChange={([v]) => setYears(v)}
       />
-    </fieldset>
+    </Field>
   );
 };
 
 export const InvestmentInputs: FC = () => {
   return (
-    <div className="grid gap-4 md:grid-cols-3 lg:gap-8">
+    <FieldGroup className="grid gap-4 md:grid-cols-3 lg:gap-8">
       <InitialInvestmentField />
       <MonthlyContributionField />
       <TimeHorizonField />
-    </div>
+    </FieldGroup>
   );
 };
