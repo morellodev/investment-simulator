@@ -9,7 +9,12 @@ import { useAppStore } from "@/store/appStore";
 import { clamp } from "@/utils/math";
 import { CurrencySymbol } from "./CurrencySymbol";
 import { Field, FieldGroup, FieldLabel } from "./ui/field";
-import { Input } from "./ui/input";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+  InputGroupText,
+} from "./ui/input-group";
 import { Slider } from "./ui/slider";
 
 const InitialInvestmentField: FC = () => {
@@ -26,20 +31,23 @@ const InitialInvestmentField: FC = () => {
   return (
     <Field>
       <div className="mb-2 flex flex-col gap-3">
-        <FieldLabel htmlFor={id}>
-          Initial Investment (<CurrencySymbol currency={currency} />)
-        </FieldLabel>
-        <Input
-          id={id}
-          type="text"
-          inputMode="decimal"
-          value={initialInvestment}
-          onChange={(e) => {
-            const n = Number(e.target.value);
-            if (Number.isNaN(n)) return;
-            setInitialInvestment(clamp(n, ...initialInvestmentRange));
-          }}
-        />
+        <FieldLabel htmlFor={id}>Initial Investment</FieldLabel>
+        <InputGroup>
+          <InputGroupInput
+            id={id}
+            type="text"
+            inputMode="decimal"
+            value={initialInvestment}
+            onChange={(e) => {
+              const n = Number(e.target.value);
+              if (Number.isNaN(n)) return;
+              setInitialInvestment(clamp(n, ...initialInvestmentRange));
+            }}
+          />
+          <InputGroupAddon>
+            <CurrencySymbol currency={currency} />
+          </InputGroupAddon>
+        </InputGroup>
       </div>
       <Slider
         min={initialInvestmentRange[0]}
@@ -66,20 +74,23 @@ const MonthlyContributionField: FC = () => {
   return (
     <Field>
       <div className="mb-2 flex flex-col gap-3">
-        <FieldLabel htmlFor={id}>
-          Monthly Contribution (<CurrencySymbol currency={currency} />)
-        </FieldLabel>
-        <Input
-          id={id}
-          type="text"
-          inputMode="decimal"
-          value={monthlyContribution}
-          onChange={(e) => {
-            const n = Number(e.target.value);
-            if (Number.isNaN(n)) return;
-            setMonthlyContribution(clamp(n, ...monthlyContributionRange));
-          }}
-        />
+        <FieldLabel htmlFor={id}>Monthly Contribution</FieldLabel>
+        <InputGroup>
+          <InputGroupInput
+            id={id}
+            type="text"
+            inputMode="decimal"
+            value={monthlyContribution}
+            onChange={(e) => {
+              const n = Number(e.target.value);
+              if (Number.isNaN(n)) return;
+              setMonthlyContribution(clamp(n, ...monthlyContributionRange));
+            }}
+          />
+          <InputGroupAddon>
+            <CurrencySymbol currency={currency} />
+          </InputGroupAddon>
+        </InputGroup>
       </div>
       <Slider
         min={monthlyContributionRange[0]}
@@ -105,18 +116,23 @@ const TimeHorizonField: FC = () => {
   return (
     <Field>
       <div className="mb-2 flex flex-col gap-3">
-        <FieldLabel htmlFor={id}>Time Horizon (years)</FieldLabel>
-        <Input
-          id={id}
-          type="text"
-          inputMode="decimal"
-          value={years}
-          onChange={(e) => {
-            const n = Number(e.target.value);
-            if (Number.isNaN(n)) return;
-            setYears(clamp(n, ...investmentDurationYearsRange));
-          }}
-        />
+        <FieldLabel htmlFor={id}>Time Horizon</FieldLabel>
+        <InputGroup>
+          <InputGroupInput
+            id={id}
+            type="text"
+            inputMode="decimal"
+            value={years}
+            onChange={(e) => {
+              const n = Number(e.target.value);
+              if (Number.isNaN(n)) return;
+              setYears(clamp(n, ...investmentDurationYearsRange));
+            }}
+          />
+          <InputGroupAddon align="inline-end">
+            <InputGroupText>years</InputGroupText>
+          </InputGroupAddon>
+        </InputGroup>
       </div>
       <Slider
         min={investmentDurationYearsRange[0]}
