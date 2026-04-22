@@ -40,11 +40,5 @@
     "typescript": "^5.9.3",
     "vite": "^7.1.9",
     "vite-plugin-sitemap": "^0.8.2"
-  },
-  "trustedDependencies": [
-    "@tailwindcss/oxide",
-    "esbuild",
-    "lefthook",
-    "msw"
-  ]
+  }
 }
