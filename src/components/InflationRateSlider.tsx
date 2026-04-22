@@ -6,24 +6,25 @@ import { FormattedNumber } from "./FormattedNumber";
 import { Slider } from "./ui/slider";
 
 export const InflationRateSlider: FC = () => {
-  const { annualInflationCent, setAnnualInflationCent } = useAppStore(
+  const { annualInflation, setAnnualInflation } = useAppStore(
     useShallow((state) => ({
-      annualInflationCent: state.annualInflationCent,
-      setAnnualInflationCent: state.setAnnualInflationCent,
+      annualInflation: state.annualInflation,
+      setAnnualInflation: state.setAnnualInflation,
     })),
   );
 
   return (
     <div className="flex flex-col gap-4">
       <div className="font-medium text-xl/none">
-        <FormattedNumber value={annualInflationCent / 100} style="percent" />
+        <FormattedNumber value={annualInflation} style="percent" />
       </div>
 
       <Slider
         min={annualInflationRange[0]}
         max={annualInflationRange[1]}
-        value={[annualInflationCent]}
-        onValueChange={([v]) => setAnnualInflationCent(v)}
+        step={0.01}
+        value={[annualInflation]}
+        onValueChange={([v]) => setAnnualInflation(v)}
       />
     </div>
   );

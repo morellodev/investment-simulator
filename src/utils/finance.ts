@@ -12,34 +12,34 @@ export function calculateTotalInvested({
   return initialInvestment + totalContribution;
 }
 
-export function calculateFutureInvestmentValue({
+export function projectInvestmentSeries({
   initialInvestment,
   monthlyContribution,
   annualReturn,
   annualInflation,
   years,
-}: {
-  initialInvestment: number;
-  monthlyContribution: number;
-  annualReturn: number;
-  annualInflation: number;
-  years: number;
-}): number {
-  const months = years * 12;
-
-  // Compute real rate of return
+}: InvestmentCalculationParams): number[] {
   const realAnnualReturn = (1 + annualReturn) / (1 + annualInflation) - 1;
   const monthlyRealReturn = realAnnualReturn / 12;
 
-  // Initial value
+  const series: number[] = [];
   let value = initialInvestment;
 
-  // Compound monthly with real rate of return
-  for (let month = 0; month < months; month++) {
-    value = value * (1 + monthlyRealReturn) + monthlyContribution;
+  for (let year = 1; year <= years; year++) {
+    for (let month = 0; month < 12; month++) {
+      value = value * (1 + monthlyRealReturn) + monthlyContribution;
+    }
+    series.push(value);
   }
 
-  return value;
+  return series;
+}
+
+export function calculateFutureInvestmentValue(
+  params: InvestmentCalculationParams,
+): number {
+  const series = projectInvestmentSeries(params);
+  return series[series.length - 1] ?? params.initialInvestment;
 }
 
 export function calculateReturnValue({
