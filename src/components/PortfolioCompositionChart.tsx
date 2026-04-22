@@ -16,7 +16,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export const PortfolioCompositionChart: FC = () => {
+const PortfolioCompositionChart: FC = () => {
   const portfolio = usePortfolio();
   const chartData = [portfolio.composition];
 

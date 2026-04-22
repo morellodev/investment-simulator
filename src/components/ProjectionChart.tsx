@@ -17,7 +17,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export const ProjectionChart: FC = () => {
+const ProjectionChart: FC = () => {
   const { currency, locale } = useAppStore(
     useShallow((state) => ({
       currency: state.currency,
