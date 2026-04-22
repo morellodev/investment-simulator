@@ -52,7 +52,7 @@ export function calculateReturnValue({
   return futureInvestmentValue - totalInvested;
 }
 
-export function calculateRateOfReturn({
+export function calculateTotalReturn({
   totalInvested,
   futureInvestmentValue,
 }: {
@@ -77,7 +77,7 @@ type InvestmentCalculationResults = {
   totalInvested: number;
   futureInvestmentValue: number;
   returnValue: number;
-  rateOfReturn: number;
+  totalReturn: number;
 };
 
 export function calculateInvestmentMetrics(
@@ -89,7 +89,7 @@ export function calculateInvestmentMetrics(
     totalInvested,
     futureInvestmentValue,
   });
-  const rateOfReturn = calculateRateOfReturn({
+  const totalReturn = calculateTotalReturn({
     totalInvested,
     futureInvestmentValue,
   });
@@ -98,6 +98,6 @@ export function calculateInvestmentMetrics(
     totalInvested,
     futureInvestmentValue,
     returnValue,
-    rateOfReturn,
+    totalReturn,
   };
 }

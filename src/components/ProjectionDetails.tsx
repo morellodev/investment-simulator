@@ -3,25 +3,25 @@ import { useInvestmentMetrics } from "@/store/appStore";
 import { Currency } from "./Currency";
 import { Percent } from "./Percent";
 
-const InvestmentReturn: FC = () => {
-  const { rateOfReturn } = useInvestmentMetrics();
+const TotalReturn: FC = () => {
+  const { totalReturn } = useInvestmentMetrics();
 
-  const normalizedReturnRate = Number.isNaN(rateOfReturn) ? 0 : rateOfReturn;
+  const normalizedTotalReturn = Number.isNaN(totalReturn) ? 0 : totalReturn;
 
   return (
     <div className="flex justify-between px-4">
-      <dt>Investment Return</dt>
+      <dt>Total Return</dt>
       <dd className="font-semibold">
         <span
           className={
-            normalizedReturnRate === 0
+            normalizedTotalReturn === 0
               ? "text-muted-foreground"
-              : normalizedReturnRate > 0
+              : normalizedTotalReturn > 0
                 ? "text-green-700 dark:text-green-300"
                 : "text-red-700 dark:text-red-300"
           }
         >
-          <Percent value={normalizedReturnRate} signDisplay="exceptZero" />
+          <Percent value={normalizedTotalReturn} signDisplay="exceptZero" />
         </span>
       </dd>
     </div>
@@ -44,7 +44,7 @@ const TotalEarned: FC = () => {
 export const ProjectionDetails: FC = () => {
   return (
     <dl className="flex flex-col gap-2">
-      <InvestmentReturn />
+      <TotalReturn />
       <TotalEarned />
     </dl>
   );
